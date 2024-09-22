@@ -1,0 +1,37 @@
+/* Default Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    background-color: rgba(240, 248, 255, 0.192);
+    /* Light transparent */
+    transition: background-color 0.3s ease;
+}
+
+.navbar-scrolled {
+    background-color: rgb(6, 158, 74);
+    transition: background-color 0.3s ease;
+}
+
+.sign_in {
+    font-weight: bold;
+    color: black;
+    background-color: greenyellow;
+    margin-right: 20px;
+    border-radius: 30px;
+    width: 120px;
+    text-align: center;
+}
+
+.sign_up {
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    border-radius: 30px;
+    width: 120px;
+    text-align: center;
+}

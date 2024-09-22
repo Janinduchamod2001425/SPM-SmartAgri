@@ -1,0 +1,81 @@
+/* General Styles for Navigation */
+.navigations {
+    margin-left: 2rem;
+    /* Adjusted margin for more flexibility */
+    font-weight: bold;
+    color: #000;
+    position: relative;
+    padding: 10px;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.navigations:hover {
+    color: #000;
+}
+
+.navigations.active {
+    border-bottom: 1px solid black;
+}
+
+/* Hover effect for underlining with animation */
+.navigations::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background-color: #087e5a;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.navigations.active::after,
+.navigations:hover::after {
+    transform: scaleX(1);
+}
+
+/* Add background and shadow when scrolled */
+.navigations.scrolled {
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for the Navbar container */
+.nav {
+    padding-left: 2rem;
+    /* Reduced padding for better flexibility */
+    position: relative;
+    /* Changed from absolute to relative */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 992px) {
+    .nav {
+        padding-left: 0;
+        /* Remove padding on smaller screens */
+    }
+
+    .navigations {
+        margin-left: 1rem;
+        /* Reduce margin for smaller screens */
+        padding: 8px;
+        /* Adjust padding */
+        font-size: 1rem;
+        /* Adjust font size for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .navigations {
+        font-size: 0.9rem;
+        /* Further reduce font size on small screens */
+        margin-left: 0;
+        /* Remove extra margins */
+    }
+
+    .nav {
+        padding-left: 0;
+    }
+}

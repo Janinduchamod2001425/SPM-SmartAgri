@@ -1,0 +1,137 @@
+/* Responsive background image */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.bgImage {
+    width: 100vw;
+    height: 110vh;
+    background-image: url('../images/smart.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+
+/* About section adjustments */
+.about {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(240, 248, 255, 0.8);
+    padding: 20px 40px;
+    border-radius: 30px;
+    text-align: center;
+    max-width: 90%;
+}
+
+/* Responsive font sizes */
+.t1 {
+    font-size: 4vw;
+    color: rgb(4, 58, 25);
+}
+
+.t2 {
+    font-size: 2vw;
+    color: rgb(85, 85, 90);
+}
+
+.t3 {
+    color: rgb(240, 255, 245);
+    font-weight: bold;
+    font-size: 1.5vw;
+}
+
+/* Responsive button */
+.gets {
+    background-color: black;
+    color: lime;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 1vw;
+}
+
+/* Features section responsive layout */
+.features {
+    margin-top: 820px;
+    margin-bottom: 60px;
+}
+
+/* Feature box styling with responsive sizes */
+.feature_box {
+    width: 300px;
+    height: 300px;
+    background-color: #fff;
+    border-radius: 30px;
+    margin: 20px 0;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .t1 {
+        font-size: 6vw;
+    }
+
+    .t2 {
+        font-size: 4vw;
+    }
+
+    .t3 {
+        font-size: 3vw;
+    }
+
+    .gets {
+        font-size: 3vw;
+    }
+
+    .bgImage {
+        height: 300px;
+    }
+
+    .about {
+        padding: 10px 20px;
+        max-width: 100%;
+    }
+
+    .feature_box {
+        height: 250px;
+    }
+}
+
+@media (max-width: 576px) {
+    .t1 {
+        font-size: 7vw;
+    }
+
+    .t2 {
+        font-size: 5vw;
+    }
+
+    .t3 {
+        font-size: 4vw;
+    }
+
+    .gets {
+        font-size: 4vw;
+    }
+
+    .bgImage {
+        height: 250px;
+    }
+
+    .about {
+        padding: 5px 15px;
+    }
+
+    .feature_box {
+        height: 200px;
+    }
+}

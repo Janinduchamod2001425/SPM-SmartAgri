@@ -1,0 +1,49 @@
+/* Register.css */
+
+.regform {
+    background-color: rgb(140, 246, 168);
+    padding: 30px;
+    border-radius: 20px;
+    width: 700px;
+}
+
+.form-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+}
+
+/* Two fields side by side for larger screens */
+@media (min-width: 768px) {
+    .form-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Make the button and row span two columns on larger screens */
+@media (min-width: 768px) {
+    .button-container {
+        grid-column: span 2;
+        text-align: center;
+    }
+
+    .reg_btn {
+        width: 635px;
+    }
+}
+
+/* One field per row for smaller screens */
+@media (max-width: 767px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .button-container {
+        grid-column: span 1;
+        text-align: center;
+    }
+
+    .reg_btn {
+        width: 300px;
+    }
+}

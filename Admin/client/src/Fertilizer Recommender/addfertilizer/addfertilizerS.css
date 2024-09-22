@@ -1,0 +1,71 @@
+.addUser {
+    width: 70%;
+    /* Adjusted to provide more space for side-by-side fields */
+    background-color: rgb(213, 238, 202);
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.065);
+    border-radius: 15px;
+    margin: 50px auto;
+    padding: 50px;
+}
+
+.addUserForm {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    /* Adds space between the form groups */
+    margin-top: 20px;
+}
+
+.addUserForm .inputGroup {
+    width: calc(50% - 20px);
+    /* Makes each input group take 50% of the available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.addUserForm .inputGroup label {
+    margin-bottom: 2px;
+}
+
+.addUserForm .inputGroup input {
+    margin-bottom: 15px;
+    padding: 10px;
+    outline: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.065);
+}
+
+.addUserForm .inputGroup button {
+    width: 100%;
+    /* Makes the button take the full width of the container */
+    border: 0;
+    outline: none;
+    background-color: rgb(2, 2, 2);
+    color: rgb(22, 255, 1);
+    font-weight: bolder;
+    padding: 15px;
+    border: 1.5px solid black;
+    border-radius: 10px;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.addUser h3 {
+    margin-top: 10px;
+    font-size: 27px;
+}
+
+.backHome {
+    background-color: aquamarine;
+    text-decoration: none;
+    padding: 2px 5px;
+    border-radius: 8px;
+    color: black;
+}
+
+.alert {
+    font-family: monospace;
+    font-weight: bolder;
+    font-size: 20px;
+}

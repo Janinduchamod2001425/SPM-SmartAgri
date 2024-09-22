@@ -1,0 +1,96 @@
+.card-container {
+    padding: 20px;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.add-btn {
+    text-decoration: none;
+    background-color: rgb(39, 133, 36);
+    color: white;
+    font-weight: 500;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.065);
+    border: 5px;
+    padding: 8px 12px;
+    display: inline-block;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.crop-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.crop-btn {
+    padding: 10px 15px;
+    background-color: #f3f3f3;
+    color: rgb(19, 65, 19);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: 1px solid black;
+}
+
+.crop-btn.active {
+    background-color: #51ff00;
+    color: black;
+    text-decoration: none;
+    outline: none;
+}
+
+.crop-btn:hover {
+    background-color: #cefc05;
+    color: black;
+}
+
+.card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.heading {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.topics {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.action-buttons {
+    margin-top: 20px;
+}
+
+.update-btn,
+.delete-btn {
+    padding: 10px 15px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.update-btn {
+    background-color: #04c04c;
+    color: #ffffff;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.alert {
+    font-family: monospace;
+    font-weight: bolder;
+    font-size: 20px;
+}
