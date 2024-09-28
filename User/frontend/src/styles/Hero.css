@@ -1,45 +1,33 @@
-/* Responsive background image */
-* {
-    margin: 0;
-    padding: 0;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 .bgImage {
-    
-    
-    top: 0;
-    left: 0;
+    width: 1519px;
+    margin-left: -112px;
 }
-
 
 /* About section adjustments */
 .about {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(240, 248, 255, 0.8);
-    padding: 20px 40px;
-    border-radius: 30px;
-    text-align: center;
-    max-width: 90%;
+    margin-top: -820px;
 }
 
 /* Responsive font sizes */
 .t1 {
-    font-size: 4vw;
+    font-size: 5vw;
     color: rgb(4, 58, 25);
+    font-family: monospace;
+    font-weight: bold;
 }
 
 .t2 {
     font-size: 2vw;
-    color: rgb(85, 85, 90);
+    color: rgb(10, 10, 14);
 }
 
 .t3 {
-    color: rgb(240, 255, 245);
+    color: rgb(255, 255, 255);
     font-weight: bold;
-    font-size: 1.5vw;
+    font-size: 15px;
 }
 
 /* Responsive button */
@@ -51,21 +39,109 @@
     font-size: 1vw;
 }
 
-/* Features section responsive layout */
-.features {
-    margin-top: 820px;
-    margin-bottom: 60px;
+.features{
+    margin-top: 130px;
+    width: 1300px;
+    height: 300px;
 }
 
-/* Feature box styling with responsive sizes */
-.feature_box {
+.feature_box{
     width: 300px;
     height: 300px;
-    background-color: #fff;
-    border-radius: 30px;
-    margin: 20px 0;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    background-color: rgba(240, 248, 255, 0.788);
+    float: left;
+    margin-left: 13px;
+    margin-right: 12px;
+    border-radius: 25px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.feature_box .description {
+    position: absolute;
+    bottom: 68px;
+    left: 0;
+    right: 0;
+    border-radius: 25px;
+    width: 300px;
+    height: 300px;
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    padding: 30px;
+    font-size: 16px;
     text-align: center;
+    opacity: 0; 
+    visibility: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.feature_box:hover .description {
+    opacity: 1;
+    visibility: visible;
+}
+
+.feature_box img {
+    max-width: 100px;
+}
+
+.feature_box .title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.feature_box button {
+    background-color: #228B22; /* green button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.feature_box:hover {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+}
+
+.feature_icon{
+    width: 150px;
+    height: 150px;
+    margin-left: 55px;
+    margin-top: -5px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.feature_title{
+    margin-top: -2px;
+    text-align: center;
+    font-family: monospace;
+    font-weight: 700;
+}
+
+.feature_btn{
+    width: 100px;
+    margin-left: 80px;
+    background-color: darkgreen;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: monospace;
+    margin-top: 19px;
+    text-decoration: none;
+    outline: none;
+    text-align: center;
+}
+
+.feature_btn:hover{
+    background-color: black;
 }
 
 /* Media query for smaller screens */
@@ -94,10 +170,6 @@
         padding: 10px 20px;
         max-width: 100%;
     }
-
-    .feature_box {
-        height: 250px;
-    }
 }
 
 @media (max-width: 576px) {
@@ -124,8 +196,54 @@
     .about {
         padding: 5px 15px;
     }
+}
 
-    .feature_box {
-        height: 200px;
-    }
+.genetic_section{
+    width: 100%;
+    background-color: #f2f5f2;
+    height: 500px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    border-radius: 25px;
+}
+
+.picture{
+    width: 400px;
+    background-color: black;
+    height: 500px;
+    border-radius: 25px;
+}
+
+.f_image{
+    width: 400px;
+    height: auto;
+}
+
+.picture2{
+    width: 400px;
+    background-color: black;
+    height: 500px;
+    float: right;
+}
+
+.f_image2{
+    width: 400px;
+    height: auto;
+    float: right;
+}
+
+.why_title{
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 70px;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.why_subtitle{
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    text-align: center;
 }
