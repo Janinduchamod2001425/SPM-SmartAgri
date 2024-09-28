@@ -32,3 +32,9 @@
     width: 120px;
     text-align: center;
 }
+
+#username{
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 16px;
+}
