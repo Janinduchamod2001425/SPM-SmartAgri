@@ -1,15 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom'; // Import NavLink for dynamic routing
 import '../styles/Navigation.css';
 
 const Navigation = () => {
-    const [activeLink, setActiveLink] = useState('#home'); // default active link
-
-    // Function to handle active link change
-    const handleSelect = (selectedKey) => {
-        setActiveLink(selectedKey);
-    };
-
     return (
         <div>
             {/* Responsive Navbar */}
@@ -20,37 +14,37 @@ const Navigation = () => {
 
                     {/* Collapsing Navbar links */}
                     <Navbar.Collapse id="navbar-responsive">
-                        <Nav className="me-auto" onSelect={handleSelect}>
-                            <Nav.Link
-                                href="#home"
-                                className={`navigations ${activeLink === '#home' ? 'active' : ''}`}
+                        <Nav className="me-auto">
+                            <NavLink
+                                to="/"
+                                className={({ isActive }) => isActive ? 'navigations active' : 'navigations'}
                             >
-                                About
-                            </Nav.Link>
-                            <Nav.Link
-                                href="#genetic-engineering"
-                                className={`navigations ${activeLink === '#genetic-engineering' ? 'active' : ''}`}
+                                Home
+                            </NavLink>
+                            <NavLink
+                                to="/genetic_home"
+                                className={({ isActive }) => isActive ? 'navigations active' : 'navigations'}
                             >
                                 Genetic Engineering
-                            </Nav.Link>
-                            <Nav.Link
-                                href="#fertilizers"
-                                className={`navigations ${activeLink === '#fertilizers' ? 'active' : ''}`}
+                            </NavLink>
+                            <NavLink
+                                to="/fertilizer_home"
+                                className={({ isActive }) => isActive ? 'navigations active' : 'navigations'}
                             >
                                 Fertilizers
-                            </Nav.Link>
-                            <Nav.Link
-                                href="#distributions"
-                                className={`navigations ${activeLink === '#distributions' ? 'active' : ''}`}
+                            </NavLink>
+                            <NavLink
+                                to="/warehouse_home"
+                                className={({ isActive }) => isActive ? 'navigations active' : 'navigations'}
                             >
                                 Distributions
-                            </Nav.Link>
-                            <Nav.Link
-                                href="#pests-diseases"
-                                className={`navigations ${activeLink === '#pests-diseases' ? 'active' : ''}`}
+                            </NavLink>
+                            <NavLink
+                                to="/pest_home"
+                                className={({ isActive }) => isActive ? 'navigations active' : 'navigations'}
                             >
                                 Pest & Diseases
-                            </Nav.Link>
+                            </NavLink>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

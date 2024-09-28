@@ -1,8 +1,11 @@
 import React from 'react'
+import Navigation from '../../components/Navigation'
 
 function Fertilizer_home() {
   return (
-    <div>Fertilizer_home</div>
+    <div>
+      <Navigation />
+    </div>
   )
 }
 

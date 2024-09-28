@@ -48,8 +48,8 @@ const Hero = () => {
             </h4>
             <LinkContainer to='/genetic_home'>
               <Nav.Link>
-              <div className="feature_btn">See More</div>
-                </Nav.Link>  
+                <div className="feature_btn">See More</div>
+              </Nav.Link>  
             </LinkContainer>  
             <div class="description">
               Harness the power of Genetic Engineering to improve crop
@@ -69,7 +69,11 @@ const Hero = () => {
               Fertilizer <br />
               Recommender
             </h4>
-            <div className="feature_btn">See More</div>
+            <LinkContainer to='/genetic_home'>
+              <Nav.Link>
+                <div className="feature_btn">See More</div>
+              </Nav.Link>  
+            </LinkContainer>  
             <div class="description">
               Our advanced Fertilizer Recommender system provides precise
               guidance on the optimal amount and type of fertilizer to use,
@@ -88,7 +92,11 @@ const Hero = () => {
               <br />
               Management
             </h4>
-            <div className="feature_btn">See More</div>
+            <LinkContainer to='/genetic_home'>
+              <Nav.Link>
+                <div className="feature_btn">See More</div>
+              </Nav.Link>  
+            </LinkContainer>  
             <div class="description">
               Efficiently manage and distribute agricultural products with our
               Warehouse Management system. It offers real-time inventory
@@ -107,7 +115,11 @@ const Hero = () => {
               <br />
               Management
             </h4>
-            <div className="feature_btn">See More</div>
+            <LinkContainer to='/genetic_home'>
+              <Nav.Link>
+                <div className="feature_btn">See More</div>
+              </Nav.Link>  
+            </LinkContainer>  
             <div class="description">
               Protect your crops from pests and diseases with our advanced
               monitoring and management tools. This feature offers tailored
