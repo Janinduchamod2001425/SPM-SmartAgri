@@ -288,20 +288,20 @@
 }
 
 /* Benefits */
-.benefits-section {
+.benefits-section-home {
     text-align: center;
     padding: 50px 20px;
     margin-top: 600px;
 }
 
-.benefits-container {
+.benefits-container-home {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 20px;
 }
 
-.benefit-box {
+.benefit-box-home {
     background-color: #f9f9f9;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -311,22 +311,22 @@
     transition: transform 0.3s ease-in-out;
 }
 
-.benefit-box:hover {
+.benefit-box-home:hover {
     transform: translateY(-10px);
 }
 
-.benefit-box img {
+.benefit-box-home img {
     width: 50px;
     margin-bottom: 15px;
 }
 
-.benefit-box h4 {
+.benefit-box-home h4 {
     margin-bottom: 10px;
     color: #333;
     font-size: 1.2em;
 }
 
-.benefit-box p {
+.benefit-box-home p {
     font-size: 0.95em;
     color: #666;
 }
@@ -513,7 +513,7 @@
 
 /* Footer */
 
-.footer {
+.footer_home {
     background-color: #0da75a; /* Blue background */
     color: #ffffff; /* White text */
     padding: 40px 0;

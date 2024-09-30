@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import Navigation from '../../components/Navigation'
-import { Button, Container, Row, Col, Form } from 'react-bootstrap';
-
+import { Button, Container, Nav, Row, Col, Form } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 import '../../screens/Genetic_Engineering/Genetic_home.css'
 
 import Gene from '../../images/Genetic/gene.svg'
 import Trait from '../../images/Genetic/Trait.jpg'
 import Plan from '../../images/Genetic/plan.jpg'
+import DB from '../../images/Genetic/DB.jpg'
 
 import crop1 from '../../images/Genetic/crop1.jpg'
 import crop2 from '../../images/Genetic/crop2.jpg'
@@ -65,7 +66,16 @@ function Genetic_Home() {
           <p>
             Empowering Farmers with Enhanced Crop Performance and Resilience
           </p>
-          <button className="cta-btn" onClick={() => document.getElementById('why').scrollIntoView({ behavior: 'smooth' })}>Explore More</button>
+          <button
+            className="cta-btn"
+            onClick={() =>
+              document
+                .getElementById("why")
+                .scrollIntoView({ behavior: "smooth" })
+            }
+          >
+            Explore More
+          </button>
         </div>
       </section>
 
@@ -126,7 +136,7 @@ function Genetic_Home() {
       </section>
 
       {/* Benefits */}
-      <section className="genetic-benefits" id='why'>
+      <section className="genetic-benefits" id="why">
         <div className="benefits-container">
           <p className="bene_title" style={{ fontSize: "60px" }}>
             Why Choose Genetic Engineering in Agriculture?
@@ -139,7 +149,7 @@ function Genetic_Home() {
 
           <div className="benefits-boxes">
             <div className="benefit-box">
-              <img src={im1} alt="Modified Crops" />
+              <img src={im1} alt="Modified Crops"  className='bene_image'/> <br />
               <h4 className="bene">Genetically Modified Crops</h4>
               <p className="bene_desc">
                 Enhance crop yield and sustainability through advanced genetic
@@ -147,7 +157,7 @@ function Genetic_Home() {
               </p>
             </div>
             <div className="benefit-box">
-              <img src={im3} alt="Modified Crops" />
+              <img src={im3} alt="Modified Crops" className='bene_image'/>
               <h4 className="bene">Customized Genetic Engineering Plans</h4>
               <p className="bene_desc">
                 Tailored plans for farmers that outline how to implement genetic
@@ -156,7 +166,7 @@ function Genetic_Home() {
               </p>
             </div>
             <div className="benefit-box">
-              <img src={im2} alt="Trait Matching" />
+              <img src={im2} alt="Trait Matching" className='bene_image'/>
               <h4 className="bene">Trait Matching</h4>
               <p className="bene_desc">
                 Helps farmers match the best traits to their specific
@@ -166,6 +176,36 @@ function Genetic_Home() {
           </div>
         </div>
       </section>
+
+      {/* Genetic Engineering DB */}
+      <section className="genetic_db">
+        <img src={DB} className="trait_matching_image_db" />
+        <div className="db_left">
+          <h2 className="db_title">
+            Genetic Engineering <br /> Database
+          </h2>
+          <h2 className="db_subtitle">
+            Comprehensive Information at Your Fingertips
+          </h2>
+          <p className="db_desc">
+            Access a vast, up-to-date database of genetically modified crops,{" "}
+            <br />
+            including detailed information on genetic traits, modification{" "}
+            <br />
+            techniques, and real-world applications. This resource helps farmers{" "}
+            <br />
+            and researchers stay informed about the latest advancements in{" "}
+            <br />
+            genetic engineering.
+          </p>
+          <LinkContainer to="/">
+            <Nav.Link>
+              <button className="cta-btn-db">Access GDB</button>
+            </Nav.Link>
+          </LinkContainer>
+        </div>
+      </section>
+      <br />
 
       {/* Guidelines for Farmers */}
       <section className="farmer-guidelines">
@@ -209,7 +249,6 @@ function Genetic_Home() {
         </div>
       </section>
 
-      
       {/* Footer */}
       <footer className="footer">
         <Container>
@@ -296,8 +335,6 @@ function Genetic_Home() {
       >
         ☝️
       </button>
-
-
     </div>
   );
 }

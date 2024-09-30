@@ -182,9 +182,9 @@ const Hero = () => {
               <img src={distribute} className="" />
             </div>
             <h4 className="feature_title">
-              Warehouse
+              Fertilizer
               <br />
-              Management
+              Distribution
             </h4>
             <LinkContainer to="/genetic_home">
               <Nav.Link>
@@ -225,14 +225,14 @@ const Hero = () => {
       </div>
 
       {/* Benefits Section */}
-      <section className="benefits-section">
+      <section className="benefits-section-home">
         <h2 className="why_title">Why Choose SmartAgri?</h2>
         <h3 className="why_subtitle">
           Empowering Farmers for a Sustainable Future
         </h3>
 
-        <div className="benefits-container">
-          <div className="benefit-box">
+        <div className="benefits-container-home">
+          <div className="benefit-box-home">
             <img src={benefit1} alt="Farmer-Focused Approach" />
             <h4>Farmer-Focused Approach</h4>
             <p>
@@ -244,7 +244,7 @@ const Hero = () => {
             </p>
           </div>
 
-          <div className="benefit-box">
+          <div className="benefit-box-home">
             <img src={benefit2} alt="Technology-Driven" />
             <h4>Technology-Driven</h4>
             <p>
@@ -256,7 +256,7 @@ const Hero = () => {
             </p>
           </div>
 
-          <div className="benefit-box">
+          <div className="benefit-box-home">
             <img src={benefit3} alt="Environmental Sustainability" />
             <h4>Environmental Sustainability</h4>
             <p>
@@ -268,7 +268,7 @@ const Hero = () => {
             </p>
           </div>
 
-          <div className="benefit-box">
+          <div className="benefit-box-home">
             <img src={benefit4} alt="Community Support" />
             <h4>Community and Collaboration</h4>
             <p>
@@ -382,7 +382,7 @@ const Hero = () => {
       </div>
 
       {/* Footer */}
-      <footer className="footer">
+      <footer className="footer_home">
         <Container>
           <Row>
             <Col md={4} className="about-col">
