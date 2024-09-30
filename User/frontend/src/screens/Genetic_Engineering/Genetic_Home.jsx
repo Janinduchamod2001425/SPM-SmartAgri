@@ -149,7 +149,8 @@ function Genetic_Home() {
 
           <div className="benefits-boxes">
             <div className="benefit-box">
-              <img src={im1} alt="Modified Crops"  className='bene_image'/> <br />
+              <img src={im1} alt="Modified Crops" className="bene_image" />{" "}
+              <br />
               <h4 className="bene">Genetically Modified Crops</h4>
               <p className="bene_desc">
                 Enhance crop yield and sustainability through advanced genetic
@@ -157,7 +158,7 @@ function Genetic_Home() {
               </p>
             </div>
             <div className="benefit-box">
-              <img src={im3} alt="Modified Crops" className='bene_image'/>
+              <img src={im3} alt="Modified Crops" className="bene_image" />
               <h4 className="bene">Customized Genetic Engineering Plans</h4>
               <p className="bene_desc">
                 Tailored plans for farmers that outline how to implement genetic
@@ -166,7 +167,7 @@ function Genetic_Home() {
               </p>
             </div>
             <div className="benefit-box">
-              <img src={im2} alt="Trait Matching" className='bene_image'/>
+              <img src={im2} alt="Trait Matching" className="bene_image" />
               <h4 className="bene">Trait Matching</h4>
               <p className="bene_desc">
                 Helps farmers match the best traits to their specific
@@ -198,7 +199,7 @@ function Genetic_Home() {
             <br />
             genetic engineering.
           </p>
-          <LinkContainer to="/">
+          <LinkContainer to="/genetic_db">
             <Nav.Link>
               <button className="cta-btn-db">Access GDB</button>
             </Nav.Link>
@@ -224,7 +225,11 @@ function Genetic_Home() {
               soil conditions, irrigation techniques, and pest management
               strategies to ensure successful yields.
             </p>
-            <button className="cta-btn-farmer">Start Your Journey</button>
+            <LinkContainer to="/genetic_trait">
+              <Nav.Link>
+                <button className="cta-btn-farmer">Match your Trait</button>
+              </Nav.Link>
+            </LinkContainer>
           </div>
         </div>
       </section>
@@ -245,7 +250,11 @@ function Genetic_Home() {
             irrigation, pest control, and more to maximize your yield and
             sustainability.
           </p>
-          <button className="cta-btn-plan">Create Your Plan</button>
+          <LinkContainer to="/genetic_plan">
+            <Nav.Link>
+              <button className="cta-btn-plan">Create Your Plan</button>
+            </Nav.Link>
+          </LinkContainer>
         </div>
       </section>
 
