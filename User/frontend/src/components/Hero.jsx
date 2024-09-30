@@ -37,39 +37,39 @@ const Hero = () => {
   const resources = [
     {
       id: 1,
-      position: [6.9271, 79.8612], // Colombo
+      position: [6.9271, 79.8612], 
       name: 'Seed Supplier Colombo',
-      image: m1, // Replace with your image path
+      image: m1, 
     },
     {
       id: 2,
-      position: [6.0250, 80.2190], // Galle
+      position: [6.0250, 80.2190], 
       name: 'Seed Supplier Galle',
-      image: m1, // Replace with your image path
+      image: m1, 
     },
     {
       id: 3,
-      position: [5.9490, 80.4204], // Matara
+      position: [5.9490, 80.4204], 
       name: 'Agricultural Extension Service Matara',
-      image: m2, // Replace with your image path
+      image: m2, 
     },
     {
       id: 4,
-      position: [8.3480, 80.4087], // Anuradhapura
+      position: [8.3480, 80.4087],
       name: 'Fertilizer Supplier Anuradhapura',
-      image: m3, // Replace with your image path
+      image: m3,
     },
     {
       id: 5,
-      position: [7.4914, 81.0188], // Polonnaruwa
+      position: [7.4914, 81.0188],
       name: 'Agricultural Extension Service Polonnaruwa',
-      image: m2, // Replace with your image path
+      image: m2,
     },
     {
       id: 6,
-      position: [6.0151, 81.1150], // Hambantota
+      position: [6.0151, 81.1150], 
       name: 'Medicine for pest Supplier Hambantota',
-      image: m4, // Replace with your image path
+      image: m4, 
     },
   ];
   
@@ -95,39 +95,41 @@ const Hero = () => {
 
   return (
     <div className="hero-section">
-      
       <section className="video-section">
-      <video className="video-video" autoPlay muted loop>
-        <source src={video} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+        <video className="video-video" autoPlay muted loop>
+          <source src={video} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
 
-      <div className="video-overlay">
-        <div className="video-content">
-        <h1 className="t1">
-          Sustainable <br />
-          Agriculture
-        </h1>
-        <h2 className="t2">Empowering Farmers with Technology</h2>
-        <p className="t3">
-          SmartAgri provides innovative solutions for sustainable farming,{" "}
-          <br />
-          genetic engineering, optimized fertilizers, and pest & disease
-          management, <br />
-          enhancing agricultural productivity.
-        </p>
-        <Button className="gets" variant="success">
-          Learn More
-        </Button>
+        <div className="video-overlay">
+          <div className="video-content">
+            <h1 className="t1">
+              Sustainable <br />
+              Agriculture
+            </h1>
+            <h2 className="t2">Empowering Farmers with Technology</h2>
+            <p className="t3">
+              SmartAgri provides innovative solutions for sustainable farming,{" "}
+              <br />
+              genetic engineering, optimized fertilizers, and pest & disease
+              management, <br />
+              enhancing agricultural productivity.
+            </p>
+            <Button className="gets" variant="success">
+              Learn More
+            </Button>
+          </div>
         </div>
-      </div>
-    </section>
-      
-      
+      </section>
+
       {/* <img src={heroImage} className="bgImage" /> */}
-      
-      <h2 className='about_title'>SmartAgri Features: Revolutionizing Farming</h2>
-      <h3 className='about_subtitle'>Innovative Solutions for Modern Agricultural Challenges</h3>
+
+      <h2 className="about_title">
+        SmartAgri Features: Revolutionizing Farming
+      </h2>
+      <h3 className="about_subtitle">
+        Innovative Solutions for Modern Agricultural Challenges
+      </h3>
       <div className="about">
         <div className="features">
           {/* Genetic Engineering */}
@@ -139,11 +141,11 @@ const Hero = () => {
               Genetic <br />
               Engineering
             </h4>
-            <LinkContainer to='/genetic_home'>
+            <LinkContainer to="/genetic_home">
               <Nav.Link>
                 <div className="feature_btn">See More</div>
-              </Nav.Link>  
-            </LinkContainer>  
+              </Nav.Link>
+            </LinkContainer>
             <div class="description">
               Harness the power of Genetic Engineering to improve crop
               resilience and productivity. This feature offers cutting-edge
@@ -162,11 +164,11 @@ const Hero = () => {
               Fertilizer <br />
               Recommender
             </h4>
-            <LinkContainer to='/genetic_home'>
+            <LinkContainer to="/genetic_home">
               <Nav.Link>
                 <div className="feature_btn">See More</div>
-              </Nav.Link>  
-            </LinkContainer>  
+              </Nav.Link>
+            </LinkContainer>
             <div class="description">
               Our advanced Fertilizer Recommender system provides precise
               guidance on the optimal amount and type of fertilizer to use,
@@ -185,11 +187,11 @@ const Hero = () => {
               <br />
               Management
             </h4>
-            <LinkContainer to='/genetic_home'>
+            <LinkContainer to="/genetic_home">
               <Nav.Link>
                 <div className="feature_btn">See More</div>
-              </Nav.Link>  
-            </LinkContainer>  
+              </Nav.Link>
+            </LinkContainer>
             <div class="description">
               Efficiently manage and distribute agricultural products with our
               Warehouse Management system. It offers real-time inventory
@@ -208,11 +210,11 @@ const Hero = () => {
               <br />
               Management
             </h4>
-            <LinkContainer to='/genetic_home'>
+            <LinkContainer to="/genetic_home">
               <Nav.Link>
                 <div className="feature_btn">See More</div>
-              </Nav.Link>  
-            </LinkContainer>  
+              </Nav.Link>
+            </LinkContainer>
             <div class="description">
               Protect your crops from pests and diseases with our advanced
               monitoring and management tools. This feature offers tailored
@@ -225,38 +227,45 @@ const Hero = () => {
 
       {/* Benefits Section */}
       <section className="benefits-section">
-      <h2 className='why_title'>Why Choose SmartAgri?</h2>
-      <h3 className='why_subtitle'>Empowering Farmers for a Sustainable Future</h3>
-        
+        <h2 className="why_title">Why Choose SmartAgri?</h2>
+        <h3 className="why_subtitle">
+          Empowering Farmers for a Sustainable Future
+        </h3>
+
         <div className="benefits-container">
-          
           <div className="benefit-box">
-            <img src={benefit1} alt="Farmer-Focused Approach"  />
+            <img src={benefit1} alt="Farmer-Focused Approach" />
             <h4>Farmer-Focused Approach</h4>
             <p>
-              At SmartAgri, we understand the unique challenges farmers face. We provide customized solutions 
-              that help farmers enhance crop yields while minimizing resources like water and fertilizers. 
-              This results in higher profitability with reduced costs, empowering them to thrive in today's competitive market.
+              At SmartAgri, we understand the unique challenges farmers face. We
+              provide customized solutions that help farmers enhance crop yields
+              while minimizing resources like water and fertilizers. This
+              results in higher profitability with reduced costs, empowering
+              them to thrive in today's competitive market.
             </p>
           </div>
-          
+
           <div className="benefit-box">
             <img src={benefit2} alt="Technology-Driven" />
             <h4>Technology-Driven</h4>
             <p>
-              SmartAgri leverages cutting-edge technologies like AI, Internet of Things (IoT), and advanced data analytics 
-              to provide real-time insights. These innovations optimize decision-making, from planting to harvesting, 
-              helping farmers make informed choices to maximize their productivity and profit.
+              SmartAgri leverages cutting-edge technologies like AI, Internet of
+              Things (IoT), and advanced data analytics to provide real-time
+              insights. These innovations optimize decision-making, from
+              planting to harvesting, helping farmers make informed choices to
+              maximize their productivity and profit.
             </p>
           </div>
-          
+
           <div className="benefit-box">
             <img src={benefit3} alt="Environmental Sustainability" />
             <h4>Environmental Sustainability</h4>
             <p>
-              Sustainability is at the core of SmartAgri. We are committed to promoting environmentally friendly practices, 
-              such as water conservation, soil health improvement, and reducing the reliance on chemical inputs. Our solutions 
-              aim to protect natural resources for future generations while maintaining high productivity.
+              Sustainability is at the core of SmartAgri. We are committed to
+              promoting environmentally friendly practices, such as water
+              conservation, soil health improvement, and reducing the reliance
+              on chemical inputs. Our solutions aim to protect natural resources
+              for future generations while maintaining high productivity.
             </p>
           </div>
 
@@ -264,151 +273,200 @@ const Hero = () => {
             <img src={benefit4} alt="Community Support" />
             <h4>Community and Collaboration</h4>
             <p>
-              SmartAgri builds a community of farmers where knowledge sharing and collaboration thrive. 
-              We provide educational resources, access to expert advice, and platforms for farmers to share experiences, 
-              ensuring a collective push towards more sustainable and profitable farming practices.
+              SmartAgri builds a community of farmers where knowledge sharing
+              and collaboration thrive. We provide educational resources, access
+              to expert advice, and platforms for farmers to share experiences,
+              ensuring a collective push towards more sustainable and profitable
+              farming practices.
             </p>
           </div>
         </div>
 
-        <Button variant="success" className="learn-more-btn">Learn More</Button>
+        <Button variant="success" className="learn-more-btn">
+          Learn More
+        </Button>
       </section>
-
 
       {/* Success Stories  */}
       <section className="testimonials-section">
-      <Container>
-        <h2 className="testimonials_title">Testimonials & Success Stories</h2>
-        <h3 className="testimonials_subtitle">What Farmers Say About SmartAgri</h3>
+        <Container>
+          <h2 className="testimonials_title">Testimonials & Success Stories</h2>
+          <h3 className="testimonials_subtitle">
+            What Farmers Say About SmartAgri
+          </h3>
 
-        {/* Case Studies */}
-        <Row className="case-studies">
-          <Col md={4}>
-            <Card className='card'>
-              <Card.Img variant="top" src={farmer1} alt="Farmer 1" />
-              <Card.Body>
-                <Card.Title>Farmer John Doe</Card.Title>
-                <Card.Text>
-                  "Using SmartAgri's fertilizer recommender, my yield increased by 20%!"
-                </Card.Text>
-                <p className="key-metric">+20% Crop Yield</p>
-                <Button variant="success" className="more_btn">See More</Button>
-              </Card.Body>
-            </Card>
-          </Col>
-          
-          <Col md={4}>
-            <Card>
-              <Card.Img variant="top" src={farmer3} alt="Farmer 2" />
-              <Card.Body>
-                <Card.Title>Farmer Jane Smith</Card.Title>
-                <Card.Text>
-                  "SmartAgri helped me save 30% on water usage while increasing productivity."
-                </Card.Text>
-                <p className="key-metric">-30% Water Usage</p>
-                <Button variant="success" className="more_btn">See More</Button>
-              </Card.Body>
-            </Card>
-          </Col>
-          
-          <Col md={4}>
-            <Card>
-              <Card.Img variant="top" src={farmer2} alt="Farmer 3" />
-              <Card.Body>
-                <Card.Title>Farmer Alex Green</Card.Title>
-                <Card.Text>
-                  "With SmartAgri’s pest management system, I saw a 50% reduction in crop loss."
-                </Card.Text>
-                <p className="key-metric">-50% Crop Loss</p>
-                <Button variant="success" className="more_btn">See More</Button>
-              </Card.Body>
-            </Card>
-          </Col>
-        </Row>
-      </Container>
-    </section>
+          {/* Case Studies */}
+          <Row className="case-studies">
+            <Col md={4}>
+              <Card className="card">
+                <Card.Img variant="top" src={farmer1} alt="Farmer 1" />
+                <Card.Body>
+                  <Card.Title>Farmer John Doe</Card.Title>
+                  <Card.Text>
+                    "Using SmartAgri's fertilizer recommender, my yield
+                    increased by 20%!"
+                  </Card.Text>
+                  <p className="key-metric">+20% Crop Yield</p>
+                  <Button variant="success" className="more_btn">
+                    See More
+                  </Button>
+                </Card.Body>
+              </Card>
+            </Col>
 
-    <h2 className='map_title'>Explore Local Agricultural Resources</h2>
-    <h3 className='map_subtitle'>Connect with Essential Supplies and Services in Your Community</h3>
-    <div style={{ height: '500px', width: '1500px' }} className='map'>
-      <MapContainer center={[6.9271, 79.8612]} zoom={10} style={{ height: '100%', width: '100%' }}>
-        <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        />
-        {resources.map(resource => (
-          <Marker key={resource.id} position={resource.position}>
-            <Popup>
-              <div>
-                <img src={resource.image} alt={resource.name} style={{ width: '50px', height: '50px' }} />
-                <h4>{resource.name}</h4>
-              </div>
-            </Popup>
-          </Marker>
-        ))}
-      </MapContainer>
-    </div>
+            <Col md={4}>
+              <Card>
+                <Card.Img variant="top" src={farmer3} alt="Farmer 2" />
+                <Card.Body>
+                  <Card.Title>Farmer Jane Smith</Card.Title>
+                  <Card.Text>
+                    "SmartAgri helped me save 30% on water usage while
+                    increasing productivity."
+                  </Card.Text>
+                  <p className="key-metric">-30% Water Usage</p>
+                  <Button variant="success" className="more_btn">
+                    See More
+                  </Button>
+                </Card.Body>
+              </Card>
+            </Col>
 
-    <footer className="footer">
-          <Container>
-            <Row>
-              <Col md={4} className="about-col">
-                  <h4>About Us</h4>
-                  <p style={{color: 'black'}}>
-                      SmartAgri is dedicated to empowering farmers with innovative solutions for sustainable agriculture. Our platform leverages technology to improve crop yields and resource efficiency.
-                  </p>
-              </Col>
-              <Col md={3} className="links-col">
-                  <h5>Quick Links</h5>
-                  <ul className="footer-links">
-                      <li><a href="/about">About Us</a></li>
-                      <li><a href="/contact">Contact Us</a></li>
-                      <li><a href="/terms">Terms of Service</a></li>
-                      <li><a href="/privacy">Privacy Policy</a></li>
-                  </ul>
-              </Col>
-              <Col md={4} className="newsletter-col">
-                  <h5>Stay Updated</h5>
-                  <Form>
-                      <Form.Group controlId="newsletterEmail">
-                          <Form.Control type="email" placeholder="Enter your email" />
-                      </Form.Group>
-                      <Button variant="success" type="submit">
-                          Subscribe
-                      </Button>
-                  </Form>
-              </Col>
-            </Row>
-            <Row className="social-row">
-              <Col className="text-center">
-                  <h5>Follow Us</h5>
-                  <div className="social-media">
-                      <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                          <img src={f1} alt="Facebook" />
-                      </a>
-                      <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                          <img src={f2} alt="Twitter" />
-                      </a>
-                      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                          <img src={f3} alt="Instagram" />
-                      </a>
-                  </div>
-              </Col>
-            </Row>
-            <Row>
-              <Col className="text-center mt-3">
-                  <p>&copy; {new Date().getFullYear()} SmartAgri. All rights reserved.</p>
-              </Col>
-            </Row>
-          </Container>
-        </footer>
+            <Col md={4}>
+              <Card>
+                <Card.Img variant="top" src={farmer2} alt="Farmer 3" />
+                <Card.Body>
+                  <Card.Title>Farmer Alex Green</Card.Title>
+                  <Card.Text>
+                    "With SmartAgri’s pest management system, I saw a 50%
+                    reduction in crop loss."
+                  </Card.Text>
+                  <p className="key-metric">-50% Crop Loss</p>
+                  <Button variant="success" className="more_btn">
+                    See More
+                  </Button>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+        </Container>
+      </section>
 
-        <button
-            className={`back-to-top ${visible ? 'visible' : ''}`}
-            onClick={scrollToTop}
+      <h2 className="map_title">Explore Local Agricultural Resources</h2>
+      <h3 className="map_subtitle">
+        Connect with Essential Supplies and Services in Your Community
+      </h3>
+      <div style={{ height: "500px", width: "1500px" }} className="map">
+        <MapContainer
+          center={[6.9271, 79.8612]}
+          zoom={10}
+          style={{ height: "100%", width: "100%" }}
         >
-            ☝️
-        </button>
+          <TileLayer
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          />
+          {resources.map((resource) => (
+            <Marker key={resource.id} position={resource.position}>
+              <Popup>
+                <div>
+                  <img
+                    src={resource.image}
+                    alt={resource.name}
+                    style={{ width: "50px", height: "50px" }}
+                  />
+                  <h4>{resource.name}</h4>
+                </div>
+              </Popup>
+            </Marker>
+          ))}
+        </MapContainer>
+      </div>
+
+      <footer className="footer">
+        <Container>
+          <Row>
+            <Col md={4} className="about-col">
+              <h4>About Us</h4>
+              <p style={{ color: "black" }}>
+                SmartAgri is dedicated to empowering farmers with innovative
+                solutions for sustainable agriculture. Our platform leverages
+                technology to improve crop yields and resource efficiency.
+              </p>
+            </Col>
+            <Col md={3} className="links-col">
+              <h5>Quick Links</h5>
+              <ul className="footer-links">
+                <li>
+                  <a href="/about">About Us</a>
+                </li>
+                <li>
+                  <a href="/contact">Contact Us</a>
+                </li>
+                <li>
+                  <a href="/terms">Terms of Service</a>
+                </li>
+                <li>
+                  <a href="/privacy">Privacy Policy</a>
+                </li>
+              </ul>
+            </Col>
+            <Col md={4} className="newsletter-col">
+              <h5>Stay Updated</h5>
+              <Form>
+                <Form.Group controlId="newsletterEmail">
+                  <Form.Control type="email" placeholder="Enter your email" />
+                </Form.Group>
+                <Button variant="success" type="submit">
+                  Subscribe
+                </Button>
+              </Form>
+            </Col>
+          </Row>
+          <Row className="social-row">
+            <Col className="text-center">
+              <h5>Follow Us</h5>
+              <div className="social-media">
+                <a
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={f1} alt="Facebook" />
+                </a>
+                <a
+                  href="https://twitter.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={f2} alt="Twitter" />
+                </a>
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={f3} alt="Instagram" />
+                </a>
+              </div>
+            </Col>
+          </Row>
+          <Row>
+            <Col className="text-center mt-3">
+              <p>
+                &copy; {new Date().getFullYear()} SmartAgri. All rights
+                reserved.
+              </p>
+            </Col>
+          </Row>
+        </Container>
+      </footer>
+
+      <button
+        className={`back-to-top ${visible ? "visible" : ""}`}
+        onClick={scrollToTop}
+      >
+        ☝️
+      </button>
     </div>
   );
 };

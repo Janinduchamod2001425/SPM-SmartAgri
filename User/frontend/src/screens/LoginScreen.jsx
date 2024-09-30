@@ -7,12 +7,16 @@ import { useLoginMutation } from '../slices/usersApiSlice';
 import { setCredentials } from '../slices/authSlice';
 import { toast } from 'react-toastify';
 import Loader from '../components/Loader';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 import '../styles/Login.css';
+
+import signin from '../images/signin1.jpg'
 
 const LoginScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -39,51 +43,66 @@ const LoginScreen = () => {
   };
 
   return (
-    <FormContainer>
-      <div id='loginform' className='p-4.5 shadow'>
-        <h1 className='text-center mb-4'>Sign In</h1>
-        <Form onSubmit={submitHandler}>
-          <Form.Group className='mb-3' controlId='email'>
-            <Form.Label className='fw-bold font-monospace'>Email Address</Form.Label>
-            <Form.Control
-              type='email'
-              placeholder='Enter email'
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className='inputs'
-            ></Form.Control>
-          </Form.Group>
+    <div>
+      <img src={signin} className="cover_image" />
+      <FormContainer>
+        <div id="loginform" className="p-4.5 shadow">
+          <h1 className="text-center mb-4">Sign In</h1>
+          <Form onSubmit={submitHandler}>
+            <Form.Group className="mb-3" controlId="email">
+              <Form.Label className="fw-bold font-monospace">
+                Email Address
+              </Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="Enter email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="inputs"
+              ></Form.Control>
+            </Form.Group>
 
-          <Form.Group className='mb-3' controlId='password'>
-            <Form.Label className='fw-bold font-monospace'>Password</Form.Label>
-            <Form.Control
-              type='password'
-              placeholder='Enter password'
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className='inputs'
-            ></Form.Control>
-          </Form.Group>
+            <Form.Group className="my-2" controlId="password">
+                <Form.Label className="fw-bold font-monospace">
+                  Password
+                </Form.Label>
+                <div className="input-with-icon">
+                  <Form.Control
+                    type={showPassword ? "text" : "password"}
+                    placeholder="Enter password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    className="inputs"
+                  ></Form.Control>
+                  <span
+                    className="password-toggle"
+                    onClick={() => setShowPassword((prev) => !prev)}
+                  >
+                    {showPassword ? <FaEyeSlash /> : <FaEye />}
+                  </span>
+                </div>
+              </Form.Group>
 
-          <Button
-            disabled={isLoading}
-            type='submit'
-            variant='primary'
-            className='w-100 mt-3'
-          >
-            Sign In
-          </Button>
-        </Form>
+            <Button
+              disabled={isLoading}
+              type="submit"
+              variant="success"
+              className="w-100 mt-3 login"
+            >
+              Sign In
+            </Button>
+          </Form>
 
-        {isLoading && <Loader />}
+          {isLoading && <Loader />}
 
-        <Row className='py-3'>
-          <Col className='text-center'>
-            New Customer? <Link to='/register'>Register</Link>
-          </Col>
-        </Row>
-      </div>
-    </FormContainer>
+          <Row className="py-3">
+            <Col className="text-center">
+              New Customer? <Link to="/register" className='navigate'>Register</Link>
+            </Col>
+          </Row>
+        </div>
+      </FormContainer>
+    </div>
   );
 };
 

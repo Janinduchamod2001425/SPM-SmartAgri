@@ -3,8 +3,26 @@
 }
 
 #loginform {
-    background-color: rgb(140, 246, 168);
+    background-color: rgba(105, 196, 129, 0.658);
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+}
+
+
+.navigate{
+    text-decoration: none;
+    font-weight: bolder;
+    color: #0a5532;
+  }
+
+
+.login{
+    border-radius: 30px;
+    height: 40px;
+    background-color: black;
+    font-weight: bold;
+    text-decoration: none;
+    border: none;
 }
