@@ -181,11 +181,11 @@ const Hero = () => {
               <img src={distribute} className="" />
             </div>
             <h4 className="feature_title">
-              Warehouse
+              Warehouse and Distribution
               <br />
               Management
             </h4>
-            <LinkContainer to='/genetic_home'>
+            <LinkContainer to='/warehouse_home'>
               <Nav.Link>
                 <div className="feature_btn">See More</div>
               </Nav.Link>  

@@ -101,7 +101,7 @@ const UpdateWarehouse = () => {
                     <input type="text" value={warehouse.managername} onChange={inputChangeHandler} name="managername" id="managername" autoComplete='off' placeholder='manager' />
                 </div>
                 <div className='inputGroup'>
-                    <button type='submit'>Update User</button>
+                    <button type='submit'>Update Warehouse</button>
                 </div>
             </form>
         </div>

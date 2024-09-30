@@ -24,6 +24,9 @@ import Warehouse from './Warehouse Management/Read Warehouses/Warehouse';
 import AddWarehouse from './Warehouse Management/Add Warehouses/AddWarehouse';
 import UpdateWarehouse from './Warehouse Management/Update Warehouses/UpdateWarehouse';
 
+import ReadFertilizerReq from './Fertilizer_Request/Read_Fertilizer_Req/ReadFertilizerReq';
+import AddFertilizerReq from './Fertilizer_Request/Add_Fertlizer_Req/AddFertilizerReq';
+
 function App() {
 
   const route = createBrowserRouter([
@@ -100,6 +103,16 @@ function App() {
     {
       path: "/edit_warehouse/:id",
       element: <Layout><UpdateWarehouse /></Layout>
+    },
+
+    // Fertilizer requests Links
+    {
+      path: "/fertilizerRequests",
+      element: <Layout>< ReadFertilizerReq/></Layout>
+    },
+    {
+      path: "/create_req",
+      element: <Layout><AddFertilizerReq /></Layout>
     },
 
 

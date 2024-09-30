@@ -1,8 +1,18 @@
 import React from 'react'
+import Navigation from '../../components/Navigation'
+import './Warehouse_Home.css'
 
 function Warehouse_Home() {
   return (
-    <div>Warehouse_Home</div>
+    <div><Navigation />
+    
+   
+    
+    
+    
+    
+    </div>
+    
   )
 }
 
