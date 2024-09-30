@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Button, Nav, Card, Form } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
+import '../styles/Hero.css';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+
 
 import genetic from '../images/features/DNA.png';
 import recommend from '../images/features/Fertilizer.png';
@@ -27,10 +31,6 @@ import f3 from '../images/footer/TwitterX.png'
 
 import video from '../videos/farming2.mp4'
 
-import '../styles/Hero.css';
-
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
 
 const Hero = () => {
 
@@ -468,6 +468,7 @@ const Hero = () => {
         ☝️
       </button>
     </div>
+
   );
 };
 
