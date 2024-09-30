@@ -12,14 +12,29 @@
     z-index: -1; /* Place behind other elements */
 }
 
+.cover_image::before {
+    background-color: rgba(0, 123, 255, 0.3);  /* Ensure the layer does not block interactions */
+  }
+
 .regform {
-    background-color: rgba(105, 196, 129, 0.658);
+    background-color: rgba(151, 214, 168, 0.788);
     padding: 30px;
     border-radius: 20px;
     position: relative;
     width: 700px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     margin-top: 40px;
+}
+
+.title{
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 40px;
+}
+
+.form_label{
+    font-size: 18px;
 }
 
 .form-grid {

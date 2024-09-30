@@ -5,7 +5,6 @@ import '../styles/Hero.css';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 
-
 import genetic from '../images/features/DNA.png';
 import recommend from '../images/features/Fertilizer.png';
 import distribute from '../images/features/Warehouse.png';
@@ -382,6 +381,7 @@ const Hero = () => {
         </MapContainer>
       </div>
 
+      {/* Footer */}
       <footer className="footer">
         <Container>
           <Row>

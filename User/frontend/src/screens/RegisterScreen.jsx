@@ -57,11 +57,11 @@ const RegisterScreen = () => {
       <img src={signup} className="cover_image" />
       <FormContainer>
         <div className="regform">
-          <h1 className="text-center mb-4">Sign Up</h1>
+          <h1 className="text-left mb-4 title">Sign Up</h1>
           <Form onSubmit={submitHandler}>
             <div className="form-grid">
               <Form.Group className="my-2" controlId="name">
-                <Form.Label className="fw-bold font-monospace">Name</Form.Label>
+                <Form.Label className="fw-bold font-monospace form_label">Name</Form.Label>
                 <Form.Control
                   type="name"
                   placeholder="Enter name"
@@ -71,7 +71,7 @@ const RegisterScreen = () => {
               </Form.Group>
 
               <Form.Group className="my-2" controlId="email">
-                <Form.Label className="fw-bold font-monospace">
+                <Form.Label className="fw-bold font-monospace form_label">
                   Email Address
                 </Form.Label>
                 <Form.Control
@@ -83,7 +83,7 @@ const RegisterScreen = () => {
               </Form.Group>
 
               <Form.Group className="my-2" controlId="password">
-                <Form.Label className="fw-bold font-monospace">
+                <Form.Label className="fw-bold font-monospace form_label">
                   Password
                 </Form.Label>
                 <div className="input-with-icon">
@@ -103,7 +103,7 @@ const RegisterScreen = () => {
               </Form.Group>
 
               <Form.Group className="my-2" controlId="confirmPassword">
-                <Form.Label className="fw-bold font-monospace">Confirm Password</Form.Label>
+                <Form.Label className="fw-bold font-monospace form_label">Confirm Password</Form.Label>
                 <div className="input-with-icon">
                   <Form.Control
                     type={showConfirmPassword ? 'text' : 'password'}
@@ -121,7 +121,7 @@ const RegisterScreen = () => {
               </Form.Group>
 
               <Form.Group className="my-2" controlId="contact">
-                <Form.Label className="fw-bold font-monospace">
+                <Form.Label className="fw-bold font-monospace form_label">
                   Contact No.
                 </Form.Label>
                 <Form.Control
@@ -133,7 +133,7 @@ const RegisterScreen = () => {
               </Form.Group>
 
               <Form.Group className="my-2" controlId="location">
-                <Form.Label className="fw-bold font-monospace">
+                <Form.Label className="fw-bold font-monospace form_label">
                   Location
                 </Form.Label>
                 <Form.Control
@@ -159,7 +159,7 @@ const RegisterScreen = () => {
           </Form>
 
           <Row className="text-center py-3">
-            <Col>
+            <Col className='fw-bold'>
               Already have an account? <Link to={`/login`} className='navigate'>Login</Link>
             </Col>
           </Row>

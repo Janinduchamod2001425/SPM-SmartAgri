@@ -47,10 +47,10 @@ const LoginScreen = () => {
       <img src={signin} className="cover_image" />
       <FormContainer>
         <div id="loginform" className="p-4.5 shadow">
-          <h1 className="text-center mb-4">Sign In</h1>
+          <h1 className="text-center mb-4 title">Sign In</h1>
           <Form onSubmit={submitHandler}>
             <Form.Group className="mb-3" controlId="email">
-              <Form.Label className="fw-bold font-monospace">
+              <Form.Label className="fw-bold font-monospace form_label">
                 Email Address
               </Form.Label>
               <Form.Control
@@ -63,7 +63,7 @@ const LoginScreen = () => {
             </Form.Group>
 
             <Form.Group className="my-2" controlId="password">
-                <Form.Label className="fw-bold font-monospace">
+                <Form.Label className="fw-bold font-monospace form_label">
                   Password
                 </Form.Label>
                 <div className="input-with-icon">
@@ -96,7 +96,7 @@ const LoginScreen = () => {
           {isLoading && <Loader />}
 
           <Row className="py-3">
-            <Col className="text-center">
+            <Col className="text-center fw-bold">
               New Customer? <Link to="/register" className='navigate'>Register</Link>
             </Col>
           </Row>
