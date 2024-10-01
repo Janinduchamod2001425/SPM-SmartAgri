@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.trait_title{
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 50px;
+    margin-top: 100px;
+}
+
+.trait_form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .trait_form:hover {
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .trait_label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #34495e;
+    margin-bottom: 0.5rem;
+    display: block;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .trait_field {
+    border-radius: 5px;
+    padding: 0.7rem;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+    transition: all 0.3s ease;
+  }
+  
+  .trait_field:focus {
+    border-color: #00ec00;
+    box-shadow: 0 0 5px rgba(6, 136, 6, 0.5);
+  }
+  
+  .trait_button {
+    text-align: center;
+  }
+  
+  button[type="submit"] {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #27ae60;
+  }
+  
+  button[disabled] {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 2rem;
+  }
+  
+  ul li {
+    background-color: #ecf0f1;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    color: #2c3e50;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  ul li:hover {
+    background-color: #bdc3c7;
+    transition: background-color 0.3s ease;
+  }
+  
+  .text-danger {
+    font-size: 1rem;
+    color: #e74c3c;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .trait_title {
+      font-size: 2rem;
+    }
+  
+    form {
+      padding: 1.5rem;
+    }
+  
+    .form-label {
+      font-size: 1.1rem;
+    }
+  
+    button[type="submit"] {
+      padding: 0.5rem 1.25rem;
+      font-size: 1rem;
+    }
+  
+    ul li {
+      font-size: 1rem;
+    }
+  }
