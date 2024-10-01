@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navigation from '../../components/Navigation'
+import {useCreatePlanMutation} from '../../slices/traitApiSlice';
+import {useNavigate} from 'react-router-dom';
+import {useDispatch } from "react-redux";
+import { toast } from 'react-toastify';
 
 import Gene from '../../images/Genetic/gene.svg'
 
 const Genetic_Trait = () => {
+
   return (
     <div>
       {/* Navigation Panel */}
