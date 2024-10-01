@@ -3,7 +3,9 @@ import PDFDocument from 'pdfkit';
 
 
 
-// Function to generate a PDF report for fertilizers
+
+
+
 export const generateFertilizerReport = async (req, res) => {
     try {
         // Fetch all fertilizers from the database
@@ -22,6 +24,16 @@ export const generateFertilizerReport = async (req, res) => {
         res.setHeader('Content-type', 'application/pdf');
         doc.pipe(res); // Stream the generated PDF to the response
 
+        // Draw green background for "SmartAgri"
+        doc.rect(0, 0, doc.page.width, 100).fill('green'); // Green rectangle for background
+        doc.fillColor('white').fontSize(24).text("SmartAgri", { align: 'center', underline: true });
+        doc.moveDown();
+
+        // Add current date
+        const currentDate = new Date().toLocaleDateString();
+        doc.fillColor('black').fontSize(12).text(`Date: ${currentDate}`, { align: 'center' });
+        doc.moveDown();
+
         // Report Title
         doc.fontSize(20).text("Fertilizer Recommendation Report", { align: 'center' });
         doc.moveDown();
@@ -35,18 +47,26 @@ export const generateFertilizerReport = async (req, res) => {
         doc.text(`Unique Fertilizer Types: ${totalTypes}`);
         doc.moveDown();
 
-        // Fertilizer Details
-        doc.fontSize(16).text("Fertilizer Details:");
+        // Display Unique Fertilizer Names
+        doc.fontSize(16).text("Unique Fertilizer Types:", { underline: true });
         doc.moveDown();
 
+        fertilizerTypes.forEach((type, index) => {
+            doc.fontSize(12).text(`${index + 1}. ${type}`);
+            doc.moveDown();
+        });
+
+        // Fertilizer Details Header
+        doc.fontSize(16).text("Fertilizer Details:", { underline: true });
+        doc.moveDown();
+
+        // Fertilizer Details (Point-wise)
         fertilizers.forEach((fertilizer, index) => {
-            doc.fontSize(12).text(`${index + 1}. Name: ${fertilizer.fername}`, { continued: true });
-            doc.text(` | Type: ${fertilizer.fertype}`, { continued: true });
-            doc.text(` | Details: ${fertilizer.ferdetails}`, { continued: true });
-            doc.text(` | Made By: ${fertilizer.fermade}`, { continued: true });
-            doc.text(` | Soil Type: ${fertilizer.fersoil}`, { continued: true });
-            doc.text(` | Suitable Crop: ${fertilizer.fercrop}`, { continued: true });
-            doc.text(` | Suitable Climate: ${fertilizer.ferclimate}`);
+            doc.fontSize(12).text(`${index + 1}. Name: ${fertilizer.fername}`);
+            doc.list([ // Using a list for point-wise structure
+                `Details: ${fertilizer.ferdetails}`,
+                `Made By: ${fertilizer.fermade}`
+            ]);
             doc.moveDown();
         });
 
@@ -56,8 +76,6 @@ export const generateFertilizerReport = async (req, res) => {
         res.status(500).json({ message: "Error generating report", error: error.message });
     }
 };
-
-
 
 
 

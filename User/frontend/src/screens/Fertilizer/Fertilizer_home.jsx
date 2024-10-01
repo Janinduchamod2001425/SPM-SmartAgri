@@ -25,7 +25,8 @@ function Fertilizer_home() {
     { crop: 'Coconut', soils: ['Sandy', 'Clay'], climates: ['Dry', 'Intermediate'] },
     { crop: 'Maize', soils: ['Loam', 'Clay'], climates: ['Dry', 'Wet'] },
     { crop: 'Pepper', soils: ['Clay', 'Loam'], climates: ['Intermediate', 'Wet'] },
-    { crop: 'Vegetables', soils: ['Loam', 'Sandy'], climates: ['Dry', 'Wet'] }
+    { crop: 'Vegetables', soils: ['Loam', 'Sandy'], climates: ['Dry', 'Wet'] },
+    
   ];
 
   useEffect(() => {
