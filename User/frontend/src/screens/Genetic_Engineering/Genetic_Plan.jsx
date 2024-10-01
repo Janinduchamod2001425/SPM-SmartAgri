@@ -1,15 +1,15 @@
-import React, { useState } from 'react'
-import Navigation from '../../components/Navigation'
-import {useCreatePlanMutation} from '../../slices/traitApiSlice';
-import {useNavigate} from 'react-router-dom';
-import { Form, Button, Row, Col, InputGroup } from 'react-bootstrap';
+import React, { useState } from 'react';
+import Navigation from '../../components/Navigation';
+import { useCreatePlanMutation } from '../../slices/traitApiSlice';
+import { useNavigate } from 'react-router-dom';
+import { Form, Button } from 'react-bootstrap';
 import { toast } from 'react-toastify';
 import Loader from '../../components/Loader';
 
-import Plan from '../../images/Genetic/plan.svg'
+import '../../screens/Genetic_Engineering/Genetic_Plan.css';
+import Plan from '../../images/Genetic/plan.svg';
 
 const Genetic_Plan = () => {
-
   const [username, setUsername] = useState("");
   const [cropType, setCropType] = useState("");
   const [trait, setTrait] = useState("");
@@ -18,8 +18,7 @@ const Genetic_Plan = () => {
   const [pest, setPest] = useState("");
   const [plantingDate, setPlantingDate] = useState(null);
 
-  const [createPlan, {isLoading}] = useCreatePlanMutation();
-
+  const [createPlan, { isLoading }] = useCreatePlanMutation();
   const navigate = useNavigate();
 
   const submitHandler = async (e) => {
@@ -62,8 +61,7 @@ const Genetic_Plan = () => {
         },
       });
     }
-  }
-
+  };
 
   return (
     <div>
@@ -71,7 +69,7 @@ const Genetic_Plan = () => {
       <Navigation />
 
       {/* Cover Image */}
-      <img src={Plan} className="cover_image" />
+      <img src={Plan} className="cover_image" alt="Cover" />
 
       {/* Hero Section */}
       <section className="genetic-hero">
@@ -85,7 +83,7 @@ const Genetic_Plan = () => {
             className="cta-btn"
             onClick={() =>
               document
-                .getElementById("why")
+                .getElementById("form")
                 .scrollIntoView({ behavior: "smooth" })
             }
           >
@@ -94,115 +92,132 @@ const Genetic_Plan = () => {
         </div>
       </section>
 
-      <section className="">
-        <div className="backgroundImage">
+      {/* Request Form */}
+      <section id="form">
+        <div className="form_content">
           <p className="packageTopic">Genetic Engineering Plan Request</p>
 
           <Form onSubmit={submitHandler}>
-            <Form.Group className="set my-2" controlId="username">
-              <Form.Label className="labelName fw-bold">Username</Form.Label>
-              <Form.Control
-                className="textview"
-                type="text"
-                placeholder="Enter your username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                required
-              />
-            </Form.Group>
+            {/* Row 1 */}
+            <div className="input-row">
+              <Form.Group className="set my-2" controlId="username">
+                <Form.Label className="labelName fw-bold">Username</Form.Label>
+                <Form.Control
+                  className="textview"
+                  type="text"
+                  placeholder="Enter your username"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  required
+                />
+              </Form.Group>
 
-            <Form.Group className="set my-2" controlId="cropType">
-              <Form.Label className="labelName fw-bold">Crop Type</Form.Label>
-              <Form.Control
-                className="textview"
-                type="text"
-                placeholder="Enter crop type"
-                value={cropType}
-                onChange={(e) => setCropType(e.target.value)}
-                required
-              />
-            </Form.Group>
+              <Form.Group className="set my-2" controlId="cropType">
+                <Form.Label className="labelName fw-bold">Crop Type</Form.Label>
+                <Form.Control
+                  className="textview"
+                  type="text"
+                  placeholder="Enter crop type"
+                  value={cropType}
+                  onChange={(e) => setCropType(e.target.value)}
+                  required
+                />
+              </Form.Group>
+            </div>
 
-            <Form.Group className="set my-2" controlId="trait">
-              <Form.Label className="labelName fw-bold">Trait</Form.Label>
-              <Form.Control
-                className="textview"
-                type="text"
-                placeholder="Enter desired trait"
-                value={trait}
-                onChange={(e) => setTrait(e.target.value)}
-                required
-              />
-            </Form.Group>
+            {/* Row 2 */}
+            <div className="input-row">
+              <Form.Group className="set my-2" controlId="trait">
+                <Form.Label className="labelName fw-bold">Trait</Form.Label>
+                <Form.Control
+                  className="textview"
+                  type="text"
+                  placeholder="Enter desired trait"
+                  value={trait}
+                  onChange={(e) => setTrait(e.target.value)}
+                  required
+                />
+              </Form.Group>
 
-            <Form.Group className="set my-2" controlId="farmSize">
-              <Form.Label className="labelName fw-bold">Farm Size</Form.Label>
-              <Form.Control
-                className="textview"
-                type="text"
-                placeholder="Enter farm size (acres/hectares)"
-                value={farmSize}
-                onChange={(e) => setFarmSize(e.target.value)}
-                required
-              />
-            </Form.Group>
+              <Form.Group className="set my-2" controlId="farmSize">
+                <Form.Label className="labelName fw-bold">Farm Size</Form.Label>
+                <Form.Control
+                  className="textview"
+                  type="text"
+                  placeholder="Enter farm size (acres/hectares)"
+                  value={farmSize}
+                  onChange={(e) => setFarmSize(e.target.value)}
+                  required
+                />
+              </Form.Group>
+            </div>
 
-            <Form.Group className="set my-2" controlId="soilType">
-              <Form.Label className="labelName fw-bold">Soil Type</Form.Label>
-              <Form.Control
-                className="textview"
-                type="text"
-                placeholder="Enter soil type"
-                value={soilType}
-                onChange={(e) => setSoilType(e.target.value)}
-                required
-              />
-            </Form.Group>
+            {/* Row 3 */}
+            <div className="input-row">
+              <Form.Group className="set my-2" controlId="soilType">
+                <Form.Label className="labelName fw-bold">Soil Type</Form.Label>
+                <Form.Control
+                  className="textview"
+                  type="text"
+                  placeholder="Enter soil type"
+                  value={soilType}
+                  onChange={(e) => setSoilType(e.target.value)}
+                  required
+                />
+              </Form.Group>
 
-            <Form.Group className="set my-2" controlId="pest">
-              <Form.Label className="labelName fw-bold">Pest</Form.Label>
-              <Form.Control
-                className="textview"
-                type="text"
-                placeholder="Enter pest information"
-                value={pest}
-                onChange={(e) => setPest(e.target.value)}
-                required
-              />
-            </Form.Group>
+              <Form.Group className="set my-2" controlId="pest">
+                <Form.Label className="labelName fw-bold">Pest</Form.Label>
+                <Form.Control
+                  className="textview"
+                  type="text"
+                  placeholder="Enter pest information"
+                  value={pest}
+                  onChange={(e) => setPest(e.target.value)}
+                  required
+                />
+              </Form.Group>
+            </div>
 
-            <Form.Group className="set my-2" controlId="plantingDate">
-              <Form.Label className="labelName fw-bold">
-                Planting Date
-              </Form.Label>
-              <Form.Control
-                className="textview"
-                type="date"
-                placeholder="Select planting date"
-                value={plantingDate}
-                onChange={(e) => setPlantingDate(e.target.value)}
-                required
-              />
-            </Form.Group>
+            {/* Row 4 */}
+            <div className="input-row">
+              <Form.Group className="set my-2" controlId="plantingDate">
+                <Form.Label className="labelName fw-bold">
+                  Planting Date
+                </Form.Label>
+                <Form.Control
+                  className="textview"
+                  type="date"
+                  placeholder="Select planting date"
+                  value={plantingDate}
+                  onChange={(e) => setPlantingDate(e.target.value)}
+                  required
+                />
+              </Form.Group>
+            </div>
 
             <div className="text-center my-3">
-            {isLoading ? (
+              {isLoading ? (
                 <Loader />
-            ) : (
-                <Button
-                    type="submit"
-                    variant="primary"
-                    className=''
-                >
-                    Submit Request
+              ) : (
+                <Button type="submit" variant="success" className="request_btn">
+                  Submit Request
                 </Button>
-            )}
-        </div>
+              )}
+            </div>
           </Form>
+
+          {/* Instructions for Farmers */}
+          <div className="text-center mt-3">
+            <p className="instructions">
+              We will review your request details, create a personalized plan,
+              and send it to you soon.
+            </p>
+          </div>
         </div>
       </section>
     </div>
   );
-}
+};
 
-export default Genetic_Plan
+export default Genetic_Plan;

@@ -2,7 +2,7 @@
 
 .cover_image {
     margin-top: -8px;
-    width: 1536px;
+    width: 1519px;
 }
 
 .overview{
@@ -170,7 +170,7 @@
     flex-wrap: wrap; /* Allow wrapping for smaller screens */
   }
   
-  .crop-image {
+  .crop-image-home {
     width: 24%; /* Adjust width based on how many images you want in a row */
     height: auto; /* Maintain aspect ratio */
     border-radius: 8px; /* Rounded corners */

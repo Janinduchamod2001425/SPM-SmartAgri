@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+/* General Section Styles */
+.crop-list-section {
+    padding: 20px;
+    margin-top: 50px;
+    margin-bottom: 80px;
+}
+  
+.crop-image{
+    width: 100px;
+}
+
+  /* Crop Grid Styles */
+  .crop-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 40px; 
+    justify-items: center; 
+  }
+  
+  /* Individual Crop Card Styles */
+  .crop-card {
+    width: 100%; 
+    max-width: 200px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #aae7a7;
+    padding: 20px;
+    background-color: #b8fda3; 
+    border-radius: 30px;
+    text-align: center; 
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s; 
+  }
+  
+  .crop-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  }
+  
+  /* Button Styles */
+  .see-more-btn {
+    background-color: #000408; /* Primary button color */
+    color: #fff;
+    padding: 5px 15px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s; 
+  }
+  
+  .see-more-btn:hover {
+    background-color: #0aff02; 
+    color: black;
+  }
+  
+  /* Modal Overlay Styles */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  /* Modal Content Styles */
+  .modal-content {
+    background-color: #fff; 
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    width: 100%; 
+    position: relative;
+    margin-top: 90px;
+  }
+  
+  /* Image in Modal */
+  .modal-image {
+    width: 100%; 
+    height: auto; 
+    border-radius: 8px;
+    margin-bottom: 15px; 
+  }
+  
+  /* Close Button Styles */
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: #ff5e57; /* Close button color */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s; /* Smooth color change */
+  }
+  
+  .close-btn:hover {
+    background-color: #ff3b3b; /* Darker shade on hover */
+  }
+  
+  .crop-icon {
+    width: 40px; /* Set a specific width */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 10px; /* Space between icon and crop name */
+  }
+
+.crop_head{
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 50px;
+}
+
+.crop_subhead{
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 30px;
+    margin-bottom: 60px;
+}

@@ -95,42 +95,42 @@ function Genetic_Home() {
           <img
             src={crop1}
             alt="Genetically Modified Crop 1"
-            className="crop-image"
+            className="crop-image-home"
           />
           <img
             src={crop4}
             alt="Genetically Modified Crop 2"
-            className="crop-image"
+            className="crop-image-home"
           />
           <img
             src={crop3}
             alt="Genetically Modified Crop 3"
-            className="crop-image"
+            className="crop-image-home"
           />
           <img
             src={crop2}
             alt="Genetically Modified Crop 3"
-            className="crop-image"
+            className="crop-image-home"
           />
           <img
             src={crop5}
             alt="Genetically Modified Crop 1"
-            className="crop-image"
+            className="crop-image-home"
           />
           <img
             src={crop6}
             alt="Genetically Modified Crop 2"
-            className="crop-image"
+            className="crop-image-home"
           />
           <img
             src={crop7}
             alt="Genetically Modified Crop 3"
-            className="crop-image"
+            className="crop-image-home"
           />
           <img
             src={crop8}
             alt="Genetically Modified Crop 3"
-            className="crop-image"
+            className="crop-image-home"
           />
         </div>
       </section>
