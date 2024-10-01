@@ -10,6 +10,7 @@ import fertilizerRoutes from "./routes/fertilizerRoutes.js";
 import warehouseRoute from "./routes/warehouseRoutes.js";
 import fertilizerReqRoutes from "./routes/fertilizerReqRoutes.js";
 
+
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());

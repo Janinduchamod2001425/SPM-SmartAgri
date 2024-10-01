@@ -42,6 +42,11 @@ const Sidebar = () => {
                         <span className="icon">💼</span>Fertilizer Requests
                     </NavLink>
                 </li>
+                <li>
+                    <NavLink to="/DistributionMap" activeClassName="active">
+                        <span className="icon">💼</span>Distribution Map
+                    </NavLink>
+                </li>
             </ul>
         </div>
     );

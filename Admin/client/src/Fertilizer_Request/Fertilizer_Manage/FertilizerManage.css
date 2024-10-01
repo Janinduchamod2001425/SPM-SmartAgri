@@ -42,7 +42,6 @@ table tbody tr:hover {
     cursor: pointer;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
-
 }
 
 .update-btn {
@@ -54,7 +53,18 @@ table tbody tr:hover {
     background-color: #dc3545;
     color: white;
 }
-
+.view-btn{
+    text-decoration: none;
+    background-color: rgb(39, 133, 36);
+    color: white;
+    font-weight: 500;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.065);
+    border: 5px;
+    padding: 8px 12px;
+    display: inline-block;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
 .add-btn {
     text-decoration: none;
     background-color: rgb(39, 133, 36);
@@ -66,24 +76,6 @@ table tbody tr:hover {
     display: inline-block;
     margin-bottom: 20px;
     border-radius: 5px;
-    position: relative;
-    left: 820px;
-}
-.add-btn1 {
-    text-decoration: none;
-    background-color: rgb(39, 133, 36);
-    color: white;
-    font-weight: 500;
-    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.065);
-    border: 5px;
-    padding: 8px 12px;
-    display: inline-block;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    position: relative;
-    left: 830px;
-    top: 2px;
-    height: 37px;
 }
 
 .update-btn:hover {
@@ -93,13 +85,8 @@ table tbody tr:hover {
 .delete-btn:hover {
     background-color: #c82333;
 }
-.search-bar {
-    margin: 20px 0; /* Adjust the margin as needed */
-    padding: 10px;
-    width: 800px; /* Set the width of the search bar */
-    height: 38px;
-    border: 1px solid #010000;
-    border-radius: 20px;
-    position: relative;
-    left: -360px;
+.exceeds-capacity {
+    
+    color: white;
+    color: #dc3545; 
 }

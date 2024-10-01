@@ -23,9 +23,18 @@ import Editfertilizer from './Fertilizer Recommender/updatefertilizer/Editfertil
 import Warehouse from './Warehouse Management/Read Warehouses/Warehouse';
 import AddWarehouse from './Warehouse Management/Add Warehouses/AddWarehouse';
 import UpdateWarehouse from './Warehouse Management/Update Warehouses/UpdateWarehouse';
+import DistributionOptimize from './Warehouse Management/Distribution_Optimize/DistributionOptimize';
 
 import ReadFertilizerReq from './Fertilizer_Request/Read_Fertilizer_Req/ReadFertilizerReq';
 import AddFertilizerReq from './Fertilizer_Request/Add_Fertlizer_Req/AddFertilizerReq';
+
+import DistributionMap from './Distribution View/DistributionMap';
+import FertilizerManage from './Fertilizer_Request/Fertilizer_Manage/FertilizerManage';
+import FertilizerManageEach from './Fertilizer_Request/Fertilizer_Manage/FertilizerManageEach';
+
+
+
+
 
 function App() {
 
@@ -104,6 +113,11 @@ function App() {
       path: "/edit_warehouse/:id",
       element: <Layout><UpdateWarehouse /></Layout>
     },
+    {
+      path: "/distibution_Opt",
+      element: <Layout><DistributionOptimize /></Layout>
+    },
+    
 
     // Fertilizer requests Links
     {
@@ -114,6 +128,21 @@ function App() {
       path: "/create_req",
       element: <Layout><AddFertilizerReq /></Layout>
     },
+
+    //map 
+    {
+      path: "/DistributionMap",
+      element: <Layout><DistributionMap /></Layout>
+    },
+
+    {
+      path: "/manage_req",
+      element: <Layout><FertilizerManage /></Layout>
+    },
+    {
+      path: "/manage_each", 
+      element: <FertilizerManageEach />
+    }
 
 
   ]);

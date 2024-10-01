@@ -66,11 +66,11 @@ const UpdateWarehouse = () => {
             <form className='addUserForm' onSubmit={submitForm}>
                 <div className='inputGroup'>
                     <label htmlFor="idofwarehouse">Warehouse ID</label>
-                    <input type="text" value={warehouse.idofwarehouse} onChange={inputChangeHandler} name="idofwarehouse" id="idofwarehouse" autoComplete='off' placeholder='Enter Warehouse ID' />
+                    <input type="text" value={warehouse.idofwarehouse} onChange={inputChangeHandler} name="idofwarehouse" id="idofwarehouse" autoComplete='off' placeholder='Enter Warehouse ID' disabled/>
                 </div>
                 <div className='inputGroup'>
                     <label htmlFor="warehousename">Name</label>
-                    <input type="text" value={warehouse.warehousename} onChange={inputChangeHandler} name="warehousename" id="warehousename" autoComplete='off' placeholder='Enter Warehouse Name ' />
+                    <input type="text" value={warehouse.warehousename} onChange={inputChangeHandler} name="warehousename" id="warehousename" autoComplete='off' placeholder='Enter Warehouse Name ' disabled/>
                 </div>
                 <div className='inputGroup'>
                     <label htmlFor="location">Location</label>

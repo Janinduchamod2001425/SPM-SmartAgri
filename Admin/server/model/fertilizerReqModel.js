@@ -23,7 +23,12 @@ const fertilizerReqSchema = new mongoose.Schema({
     email:{
         type: String,
         required: true
+    },
+    warehousename: {
+        type: String,
+        required: true
     }
+
 });
 
 export default mongoose.model('FertilizerReq', fertilizerReqSchema);

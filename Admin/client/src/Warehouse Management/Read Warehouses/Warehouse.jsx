@@ -1,32 +1,29 @@
-import React, { useEffect, useState } from 'react'
-import "./Warehouse.css"
+import React, { useEffect, useState } from 'react';
+import "./Warehouse.css";
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
 const Warehouse = () => {
-
     const [warehouses, setWarehouse] = useState([]);
+    const [searchTerm, setSearchTerm] = useState(''); // State for the search term
 
     useEffect(() => {
         const fetchWarehouses = async () => {
             try {
                 const response = await axios.get("http://localhost:8000/api/getWarehouses");
-                console.log(response.data)
                 setWarehouse(response.data.data);
             } catch (error) {
                 console.error('Error getting warehouses', error);
             }
         };
         fetchWarehouses();
-
     }, []);
 
-    // Delete user function
+    // Delete warehouse function
     const deleteWarehouse = async (warehouseId) => {
         try {
-
-            const confirmDeletion = window.confirm('Are you sure you want to remove this warehouse');
+            const confirmDeletion = window.confirm('Are you sure you want to remove this warehouse?');
             if (!confirmDeletion) return;
 
             const response = await axios.delete(`http://localhost:8000/api/deleteWarehouse/${warehouseId}`);
@@ -37,9 +34,25 @@ const Warehouse = () => {
         }
     };
 
+    // Filter warehouses based on search term
+    const filteredWarehouses = warehouses.filter(warehouse =>
+        warehouse.idofwarehouse.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
     return (
         <div className="table-container">
             <Link to={"/create_Warehouse"} className='add-btn'>Add New Warehouse</Link>
+            <Link to={"/distibution_Opt"} className='add-btn1'>Distribution Optimize</Link>
+
+            {/* Search Bar */}
+            <input
+                type="text"
+                placeholder="Search by Warehouse ID"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="search-bar"
+            />
+
             <table>
                 <thead>
                     <tr>
@@ -51,13 +64,11 @@ const Warehouse = () => {
                         <th>Capacity</th>
                         <th>Distance</th>
                         <th>Manager</th>
-                        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Actions</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-
-
-                    {warehouses.map((warehouse, index) => (
+                    {filteredWarehouses.map((warehouse, index) => (
                         <tr key={index}>
                             <td>{warehouse.idofwarehouse}</td>
                             <td>{warehouse.warehousename}</td>
@@ -78,7 +89,7 @@ const Warehouse = () => {
                 </tbody>
             </table>
         </div>
-    )
+    );
 }
 
-export default Warehouse
+export default Warehouse;

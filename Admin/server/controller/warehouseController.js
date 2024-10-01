@@ -1,6 +1,7 @@
 // warehouseController.js
 import Warehouse from "../model/warehouseModel.js";
 
+
 // Create a new warehouse
 export const createWarehouse = async (req, res) => {
     try {
@@ -106,3 +107,42 @@ export const updateWarehouse = async (req, res) => {
         });
     }
 };
+
+
+
+
+export const optimizeDistribution = async (req, res) => {
+    try {
+      const warehouses = await Warehouse.find();
+      const { totalQuantity } = req.query; // Assume total quantity is passed as query param
+  
+      // Sort warehouses by distance from main warehouse (ascending order)
+      const sortedWarehouses = warehouses.sort((a, b) => a.distance - b.distance);
+  
+      // Just return the warehouses with names and distances
+      const distribution = sortedWarehouses.map(warehouse => {
+        return {
+          warehousename: warehouse.warehousename,
+          distance: warehouse.distance,
+        };
+      });
+  
+      res.status(200).json({
+        status: "success",
+        data: distribution,
+      });
+    } catch (error) {
+      res.status(400).json({
+        status: "fail",
+        message: error.message,
+      });
+    }
+  };
+
+
+  
+
+
+
+  
+  

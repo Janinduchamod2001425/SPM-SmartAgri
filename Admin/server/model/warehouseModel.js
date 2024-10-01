@@ -10,7 +10,8 @@ const warehouseSchema = new mongoose.Schema({
     },
     warehousename: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     location: { 
         type: String,

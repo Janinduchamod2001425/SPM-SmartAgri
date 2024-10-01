@@ -1,0 +1,131 @@
+/* CSS for print styling */
+@media print {
+    button {
+        display: none; /* Hide print button */
+    }
+
+    /* Add additional styles for better print layout */
+    body {
+        font-size: 12px;
+        color: black;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+}
+
+.chart-container {
+    
+    width: 600px;  /* Adjust as needed */
+    height: 400px; /* Adjust as needed */
+    position: relative;
+    left: 80px;
+}
+
+.report-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    background-color: rgba(233, 255, 218, 0.8); /* Set a semi-transparent background color */
+    border: 1px solid #ddd;
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    border-radius: 10px; /* Optional: Add rounded corners */
+}
+
+.report-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.logo-placeholder {
+    position: relative;
+    top: -30px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.header-content {
+    text-align: right;
+}
+
+.report-date {
+    font-size: 14px;
+    color: #666;
+}
+
+.summary-section, .fertilizer-summary-section {
+    margin-bottom: 20px;
+}
+
+.warehouse-details-table, .summary-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.warehouse-details-table td, .summary-table td, .summary-table th {
+    border: 1px solid #5d962b;
+    padding: 8px;
+}
+
+.warehouse-details-table td:first-child, .summary-table th {
+    font-weight: bold;
+    font-size: small;
+}
+
+.chart-container {
+    margin-top: 20px;
+}
+
+.print-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    position: relative;
+    left: 300px;
+    bottom: 50px;
+
+}
+
+.print-button:hover {
+    background-color: #0056b3;
+}
+.cont{
+
+    position:relative;
+    left: 280px;
+}
+.cont1{
+
+    position:relative;
+    left: 230px;
+}
+.cont3{
+
+    position:relative;
+    left: 220px;
+    top: 15px;
+}
+
+.tabl{
+    font-size: small;
+}

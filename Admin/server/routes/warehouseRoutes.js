@@ -5,6 +5,7 @@ import {
   getWarehouse,
   deleteWarehouse,
   updateWarehouse,
+  optimizeDistribution,
 } from "../controller/warehouseController.js";
 
 const route = express.Router();
@@ -19,5 +20,9 @@ route.get("/getWarehouse/:id", getWarehouse);
 route.delete("/deleteWarehouse/:id", deleteWarehouse);
 // update a warehouse
 route.patch("/updateWarehouse/:id", updateWarehouse);
+
+route.get("/optimizeDistribution", optimizeDistribution);
+
+
 
 export default route;

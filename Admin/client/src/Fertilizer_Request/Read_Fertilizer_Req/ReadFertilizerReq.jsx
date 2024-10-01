@@ -23,23 +23,25 @@ const FertilizerReq = () => {
     }, []);
 
     // Delete user function
-    const deleteFertilizerReq = async (fertilizerreqId) => {
-        try {
+const deleteFertilizerReq = async (fertilizerreqId) => {
+    try {
+        const confirmDeletion = window.confirm('Are you sure you want to remove this fertilizer request');
+        if (!confirmDeletion) return;
 
-            const confirmDeletion = window.confirm('Are you sure you want to remove this fertilizer request');
-            if (!confirmDeletion) return;
-
-            const response = await axios.delete(`http://localhost:8000/api/deleteFertilizerReq/${fertilizerreqId}`);
-            setFertilizerReqs((prevFertilizerReq) => prevFertilizerReq.filter((fertilizerreq) => fertilizerreq._id !== fertilizerreqId));
-            toast.success(response.data.msg, { position: "top-center", className: "alert" });
-        } catch (error) {
-            console.error('Error deleting Fertilizer Request:', error);
-        }
-    };
+        const response = await axios.delete(`http://localhost:8000/api/deleteFertilizerReq/${fertilizerreqId}`);
+        setFertilizerReqs((prevFertilizerReq) => prevFertilizerReq.filter((fertilizerreq) => fertilizerreq._id !== fertilizerreqId));
+        
+        // Show success message
+        toast.success(response.data.msg, { position: "top-center", className: "alert" });
+    } catch (error) {
+        console.error('Error deleting Fertilizer Request:', error);
+    }
+};
 
     return (
         <div className="table-container">
             <Link to={"/create_req"} className='add-btn'>Add New Fertilizer Request</Link>
+            <Link to={"/manage_req"} className='add-btn'>Fertilizer Manager</Link>
             <table>
                 <thead>
                     <tr>
@@ -48,6 +50,7 @@ const FertilizerReq = () => {
                         <th>Quantity</th>
                         <th>Priority Level</th>
                         <th>Email</th>
+                        <th>Warehouse Name</th>
                         <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Actions</th>
                     </tr>
                 </thead>
@@ -61,6 +64,7 @@ const FertilizerReq = () => {
                             <td>{fertilizerreq.quantity}</td>
                             <td>{fertilizerreq.prioritylevel}</td>
                             <td>{fertilizerreq.email}</td>
+                            <td>{fertilizerreq.warehousename}</td>
                             <td>
                                 <button onClick={() => deleteFertilizerReq(fertilizerreq._id)} className="delete-btn">Reject</button>
                             </td>
