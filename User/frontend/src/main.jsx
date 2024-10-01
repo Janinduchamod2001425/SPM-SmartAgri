@@ -51,8 +51,6 @@ const router = createBrowserRouter(
         {/* Pest & Disease */}
         <Route path='/pest_home' element={<Pest_Home />}/>
 
-
-
       </Route>
     </Route>
   )

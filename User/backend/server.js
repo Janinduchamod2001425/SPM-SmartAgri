@@ -6,7 +6,10 @@ dotenv.config();
 import connectDB from './config/db.js';
 import cookieParser from 'cookie-parser';
 import { notFound, errorHandler } from './middleware/errorMiddleware.js';
+
+// Routes
 import userRoutes from './routes/userRoutes.js';
+import traitRoutes from './routes/traitRoutes.js';
 
 const port = process.env.PORT || 5000;
 
@@ -19,7 +22,9 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(cookieParser());
 
+// Routes
 app.use('/api/users', userRoutes);
+app.use('/api/traits', traitRoutes);
 
 app.get('/', (req, res) => {
   res.send('Server is ready');
