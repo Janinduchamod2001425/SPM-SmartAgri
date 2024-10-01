@@ -18,7 +18,15 @@ export const traitApiSlice = apiSlice.injectEndpoints({
         method: "GET",
       }),
     }),
+
+    matchTraits: builder.mutation({
+      query: (data) => ({
+        url: `${TRAITS_URL}/match_traits`,
+        method: "POST",
+        body: data,
+      }),
+    }),
   }),
 });
 
-export const { useCreatePlanMutation, useGetGeneticPlanByFarmerIdMutation } = traitApiSlice;
+export const { useCreatePlanMutation, useGetGeneticPlanByFarmerIdMutation, useMatchTraitsMutation } = traitApiSlice;

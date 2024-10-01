@@ -1,5 +1,6 @@
 import asyncHandler from "express-async-handler";
 import GeneticPlan from "../models/traitModel.js";
+import GeneticDB from "../models/geneticModel.js";
 
 const createPlan = asyncHandler(async (req, res) => {
   const { username, cropType, trait, farmSize, soilType, pest, plantingDate } =
@@ -48,4 +49,28 @@ const getGeneticPlan = asyncHandler(async (req, res) => {
     }
 });
 
-export { createPlan, getGeneticPlan }; 
+
+const matchTraits = asyncHandler(async (req, res) => {
+  const { soilType, pest } = req.body;
+
+  // Validate input
+  if (!soilType || !pest) {
+    res.status(400);
+    throw new Error("Please provide all required fields.");
+  }
+  // Query the Genetic DB to find matching crops
+  const matchingCrops = await GeneticDB.find({
+    soil_type: soilType,
+    pests_diseases: { $regex: pest, $options: 'i' } // Using regex for partial match
+  });
+
+  if (matchingCrops.length > 0) {
+    res.status(200).json(matchingCrops);
+  } else {
+    res.status(404).json({ message: "No matching crops found." });
+  }
+
+
+}) 
+
+export { createPlan, getGeneticPlan, matchTraits }; 
