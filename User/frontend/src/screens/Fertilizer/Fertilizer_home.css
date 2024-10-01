@@ -1,15 +1,18 @@
-.fertilizer-imagecover{
-  background-image: url('./image1.jpg'); 
-  margin-top: -8px;
-  width: 1290px;
+.cover_fertilizer{
+  margin-top: -130px;
+  width: 1519px;
+  margin-left: -112px;
+  position: relative;
 }
 
 .content-container {
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.719);
+  padding: 30px;
   border-radius: 10px;
+  position: absolute;
   max-width: 900px;
-  margin: 0 auto;
+  margin-top: -700px;
+  margin-left: 200px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -55,12 +58,13 @@
 
 .submit-button {
   background-color: #28a745;
+  border-radius: 30px;
 }
 
 .clear-button {
   background-color: #dc3545;
   margin-left: 10px;
- 
+  border-radius: 30px;
 }
 
 .fertilizer-cards {
@@ -143,7 +147,7 @@
   color: white;
   padding: 10px 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 30px;
   cursor: pointer;
   font-size: 16px;
   margin-left: 370px;

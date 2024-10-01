@@ -11,7 +11,7 @@ function Feedback() {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await axios.get("http://localhost:3000/api/feedbackgetAll");
+            const response = await axios.get("http://localhost:8000/api/feedbackgetAll");
             setFeedbacks(response.data);
         };
 
@@ -19,7 +19,7 @@ function Feedback() {
     }, []);
 
     const feedbackdelete = async(feedbackId) => {
-        await axios.delete(`http://localhost:3000/api/feedbackdelete/${feedbackId}`)
+        await axios.delete(`http://localhost:8000/api/feedbackdelete/${feedbackId}`)
         .then((response) => {
             setFeedbacks((prevFeedbacks) => prevFeedbacks.filter((feedback) => feedback._id !== feedbackId));
             toast.success(response.data.msg, {position: "top-right"});

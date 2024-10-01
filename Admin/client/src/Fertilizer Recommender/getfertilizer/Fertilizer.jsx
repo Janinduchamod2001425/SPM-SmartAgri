@@ -13,7 +13,7 @@ function Fertilizer() {
     
     useEffect(() => {
         const fetchData = async () => {
-            const response = await axios.get("http://localhost:3000/api/fgetall");
+            const response = await axios.get("http://localhost:8000/api/fgetall");
             setFertilizers(response.data);
         };
 
@@ -21,19 +21,23 @@ function Fertilizer() {
     }, []);
 
     const fertilizerdelete = async(fertilizerId) => {
-        await axios.delete(`http://localhost:3000/api/fdelete/${fertilizerId}`)
-        .then((response) => {
+
+        try {
+            const confirmDeletion = window.confirm('Are you sure you want to fertilizer details');
+            if (!confirmDeletion) return;
+
+            const response = await axios.delete(`http://localhost:8000/api/fdelete/${fertilizerId}`)
             setFertilizers((prevFertilizers) => prevFertilizers.filter((fertilizer) => fertilizer._id !== fertilizerId));
             toast.success(response.data.msg, {position: "top-right"});
-        }).catch((error) => {
-            console.log(error);
-        });
+        } catch (error) {
+            console.error('Error deleting user:', error);
+        }
     };
 
     // Function to handle report download
     const downloadReport = async () => {
         try {
-            const response = await axios.get("http://localhost:3000/api/FertilizerAdminReport", {
+            const response = await axios.get("http://localhost:8000/api/FertilizerAdminReport", {
                 responseType: 'blob' // Important for downloading files
             });
 

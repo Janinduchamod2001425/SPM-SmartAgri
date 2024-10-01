@@ -23,6 +23,8 @@ app.use(cookieParser());
 
 // Routes
 app.use('/api/users', userRoutes);
+app.use('/api/traits', traitRoutes);
+app.use('/api/genetics', geneticRoutes);
 
 if (process.env.NODE_ENV === 'production') {
   const __dirname = path.resolve();

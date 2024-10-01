@@ -31,7 +31,7 @@ const inputChangeHandler = (e) =>{
 
 useEffect(() =>{
 
-  axios.get(`http://localhost:3000/api/fgetone/${id}`)
+  axios.get(`http://localhost:8000/api/fgetone/${id}`)
   .then((response) =>{
     setFertilizer(response.data);
   }).catch((error) =>{
@@ -42,7 +42,7 @@ useEffect(() =>{
 
 const submitForm = async (e) => {
   e.preventDefault();
-  await axios.put(`http://localhost:3000/api/fupdate/${id}`, fertilizer)
+  await axios.put(`http://localhost:8000/api/fupdate/${id}`, fertilizer)
     .then((response) => {
      toast.success(response.data.msg, {position:"top-right"})
       navigate("/fertilizer")
@@ -55,7 +55,7 @@ const submitForm = async (e) => {
   return (
 
     <div className='addUser'>
-            <Link to={"/"} className='backHome'> Back </Link>
+            <Link to={"/fertilizer"} className='backHome'> Back </Link>
             <h3>Update  Fertilizer</h3>
 
             <form className='addUserForm' onSubmit={submitForm}>

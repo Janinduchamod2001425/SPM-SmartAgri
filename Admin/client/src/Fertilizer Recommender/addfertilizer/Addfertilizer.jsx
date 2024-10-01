@@ -29,7 +29,7 @@ function Addfertilizer() {
 
     const submitForm = async (e) => {
         e.preventDefault();
-        await axios.post("http://localhost:3000/api/fcreate", fertilizer)
+        await axios.post("http://localhost:8000/api/fcreate", fertilizer)
           .then((response) => {
             toast.success(response.data.msg, {position:"top-right"})
             navigate("/fertilizer")

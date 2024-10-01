@@ -25,6 +25,7 @@ import Genetic_Plan from './screens/Genetic_Engineering/Genetic_Plan.jsx';
 import Genetic_Trait from './screens/Genetic_Engineering/Genetic_Trait.jsx';
 import Genetic_DB from './screens/Genetic_Engineering/Genetic_DB.jsx';
 import CropDetailModal from './screens/Genetic_Engineering/CropDetailModel.jsx';
+import FertilizerFeedback from './screens/Fertilizer/FertilizerFeedback.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -46,6 +47,7 @@ const router = createBrowserRouter(
 
         {/* Fertilizer Recommender */}
         <Route path='/fertilizer_home' element={<Fertilizer_home />} />
+        <Route path='/fertilizer_feedback' element={<FertilizerFeedback/>}/>
 
         {/* Fertilizer Distribution */}
         <Route path='/warehouse_home' element={<Warehouse_Home />}/>
