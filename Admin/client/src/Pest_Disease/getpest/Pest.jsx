@@ -29,9 +29,14 @@ const Pest = () => {
             })
     }
 
+    
+
     return (
         <div className='pestTable'>
             <Link to={"/addpest"} className='addButton'>Add New </Link>
+            <Link to={"/admin_disease"} className='addButton'>User Feedback</Link>
+            
+            
             <table border={1} cellPadding={10} cellSpacing={0}>
                 <thead>
                     <tr>

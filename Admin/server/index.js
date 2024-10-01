@@ -8,6 +8,8 @@ import geneticRoutes from "./routes/geneticRoutes.js";
 import pestRoutes from "./routes/pestRoutes.js";
 import fertilizerRoutes from "./routes/fertilizerRoutes.js";
 import warehouseRoute from "./routes/warehouseRoutes.js";
+import diseaseRoute from "./routes/diseaseRoutes.js";
+
 
 const app = express();
 app.use(bodyParser.json());
@@ -15,7 +17,7 @@ app.use(cors());
 dotenv.config();
 
 const PORT = process.env.PORT || 8000;
-const URL = process.env.MONGOURL;
+const URL = process.env.MONGO_URL;
 
 mongoose
   .connect(URL)
@@ -32,3 +34,5 @@ app.use("/api", geneticRoutes);
 app.use("/api", pestRoutes);
 app.use("/api", fertilizerRoutes);
 app.use("/api", warehouseRoute);
+app.use("/api", diseaseRoute);
+

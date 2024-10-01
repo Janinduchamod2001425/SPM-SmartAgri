@@ -1,5 +1,11 @@
 import Pest from "../model/pestModel.js";
 
+
+
+
+
+
+
 export const pcreate = async (req, res) => {
   try {
     const pestData = new Pest(req.body);
@@ -77,3 +83,4 @@ export const pdelete = async (req, res) => {
     res.status(500).json({ error: error });
   }
 };
+

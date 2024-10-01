@@ -208,7 +208,7 @@ const Hero = () => {
               <br />
               Management
             </h4>
-            <LinkContainer to='/genetic_home'>
+            <LinkContainer to='/pest_home'>
               <Nav.Link>
                 <div className="feature_btn">See More</div>
               </Nav.Link>  

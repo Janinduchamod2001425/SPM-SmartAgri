@@ -23,6 +23,7 @@ import Editfertilizer from './Fertilizer Recommender/updatefertilizer/Editfertil
 import Warehouse from './Warehouse Management/Read Warehouses/Warehouse';
 import AddWarehouse from './Warehouse Management/Add Warehouses/AddWarehouse';
 import UpdateWarehouse from './Warehouse Management/Update Warehouses/UpdateWarehouse';
+import Disease from './Pest_Disease/Disease';
 
 function App() {
 
@@ -73,6 +74,12 @@ function App() {
       path: "/updatepest/:id",
       element: <Layout><UpdatePest /></Layout>,
     },
+
+    {
+      path: "/admin_disease",
+      element: <Layout><Disease /></Layout>,
+    },
+    
 
     // Fertilizer Recommender
     {

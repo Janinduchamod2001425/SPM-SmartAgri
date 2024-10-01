@@ -18,6 +18,7 @@
     display: inline-block;
     margin-bottom: 20px;
     border-radius: 5px;
+    margin-right: 10px;
 
 }
 
@@ -85,4 +86,23 @@ table tbody tr:hover {
 
 .pestTable ul {
     list-style: none;
+}
+
+.table-container button{
+    text-decoration: none;
+    background-color: rgb(39, 133, 36);
+    color: white;
+    font-weight: 500;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.065);
+    border: 5px;
+    padding: 8px 12px;
+    display: inline-block;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.table-container p{
+    font-weight: bold;
+    font-size: 30px;
 }
