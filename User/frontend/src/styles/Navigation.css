@@ -1,11 +1,10 @@
 /* General Styles for Navigation */
 .navigations {
-    margin-left: 2rem;
-    /* Adjusted margin for more flexibility */
+    margin-left: 118px;
     font-weight: bold;
     color: #000;
     position: relative;
-    padding: 10px;
+    margin-top: 20px;
     text-decoration: none;
     transition: color 0.3s ease-in-out;
 }

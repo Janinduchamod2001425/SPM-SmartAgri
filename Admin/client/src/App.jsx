@@ -23,6 +23,7 @@ import Editfertilizer from './Fertilizer Recommender/updatefertilizer/Editfertil
 import Warehouse from './Warehouse Management/Read Warehouses/Warehouse';
 import AddWarehouse from './Warehouse Management/Add Warehouses/AddWarehouse';
 import UpdateWarehouse from './Warehouse Management/Update Warehouses/UpdateWarehouse';
+import Feedback from './Fertilizer Recommender/Feedback';
 
 function App() {
 
@@ -87,6 +88,11 @@ function App() {
       path: "/editfertilizer/:id",
       element: <Layout><Editfertilizer /></Layout>,
     },
+    {
+      path: "/fertilizer_feedback",
+      element: <Layout><Feedback /></Layout>,
+    },
+    
 
     // Warehouse Links
     {
@@ -101,7 +107,7 @@ function App() {
       path: "/edit_warehouse/:id",
       element: <Layout><UpdateWarehouse /></Layout>
     },
-
+    
 
   ]);
 

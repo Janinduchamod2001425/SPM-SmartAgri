@@ -16,7 +16,20 @@ const fertilizerSchema = new mongoose.Schema({
     fermade:{
         type:String,
         required :true
-    }
+    },
+    fersoil:{
+        type:String,
+        required :true
+    },
+    fercrop:{
+        type:String,
+        required :true
+    },
+    ferclimate:{
+        type:String,
+        required :true
+    },
 })
 
 export default mongoose.model("Fertilizer",fertilizerSchema);
+

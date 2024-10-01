@@ -64,6 +64,8 @@ table tbody tr:hover {
     font-size: 14px;
 }
 
+
+
 .update-btn:hover {
     background-color: #218838;
 }
@@ -80,4 +82,51 @@ table tbody tr:hover {
 
 td.actions-cell {
     width: 200px; 
+}
+
+/* Flexbox layout for action-bar: buttons on the left, search on the right */
+.action-bar {
+    display: flex;
+    justify-content: space-between; /* Spread buttons and search input apart */
+    align-items: center;
+    gap: 10px;
+}
+
+/* Group for buttons */
+.button-group {
+    display: flex;
+    gap: 10px; /* Add spacing between the buttons */
+}
+
+/* Container for search input and icon */
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 400px; /* Adjust width as needed */
+}
+
+.search-input {
+    width: 100%;
+    padding: 8px 12px;
+    padding-left: 35px; /* Add padding for the search icon */
+    border: 1px solid   #73ee5d;;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Position the search icon inside the input box */
+.search-icon {
+    position: absolute;
+    left: 10px;
+    color: #bee3ac;
+    font-size: 1.2rem;
+    pointer-events: none; /* Prevent clicking on the icon */
+}
+
+/* Optional: Styling for the input placeholder */
+.search-input::placeholder {
+    color: #999;
+    font-size: 0.9rem;
 }

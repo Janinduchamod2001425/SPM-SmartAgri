@@ -1,88 +1,119 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import "./fertilizerS.css";
 import axios from 'axios';
-import toast from "react-hot-toast"
-
-
+import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
+import { FaSearch } from 'react-icons/fa'; // Import FontAwesome search icon
 
 function Fertilizer() {
+    const [fertilizers, setFertilizers] = useState([]);
+    const [searchTerm, setSearchTerm] = useState('');
 
-    const [fertilizers ,setFertilizers] = useState([]);
-
-    useEffect(() =>{
-
-        const fetchData = async() =>{
-            const response = await axios.get("http://localhost:3000/api/fgetall")
+    useEffect(() => {
+        const fetchData = async () => {
+            const response = await axios.get("http://localhost:3000/api/fgetall");
             setFertilizers(response.data);
-        }
+        };
 
         fetchData();
-    },[])
+    }, []);
 
+    const fertilizerdelete = async(fertilizerId) => {
+        await axios.delete(`http://localhost:3000/api/fdelete/${fertilizerId}`)
+        .then((response) => {
+            setFertilizers((prevFertilizers) => prevFertilizers.filter((fertilizer) => fertilizer._id !== fertilizerId));
+            toast.success(response.data.msg, {position: "top-right"});
+        }).catch((error) => {
+            console.log(error);
+        });
+    };
 
-    const fertilizerdelete = async(fertilizerId)=>{
-       await axios.delete(`http://localhost:3000/api/fdelete/${fertilizerId}`)
-       .then((response) =>{
-       setFertilizers((preFertilizer) => preFertilizer.filter((fertilizer)=> fertilizer._id !== fertilizerId))
-       toast.success(response.data.msg, {position:"top-right"})
-    }).catch((error) =>{
-        console.log(error);
-      })
+    // Function to handle report download
+    const downloadReport = async () => {
+        try {
+            const response = await axios.get("http://localhost:3000/api/FertilizerAdminReport", {
+                responseType: 'blob' // Important for downloading files
+            });
 
-    }
+            const url = window.URL.createObjectURL(new Blob([response.data]));
+            const link = document.createElement('a');
+            link.href = url;
+            link.setAttribute('download', 'fertilizer_report.pdf'); // Set the file name
+            document.body.appendChild(link);
+            link.click(); // Simulate a click on the link to trigger download
+            document.body.removeChild(link); // Clean up
+        } catch (error) {
+            console.error("Error downloading the report:", error);
+            toast.error("Failed to download report");
+        }
+    };
 
-  return (
+    // Function to handle user feedback
+    const handleUserFeedback = () => {
+        // Navigate to user feedback page or show feedback form/modal
+        // For example: history.push('/feedback');
+        toast.info("User feedback functionality not implemented yet!");
+    };
 
-    <div className="table-container">
+    // Filter fertilizers based on the search term
+    const filteredFertilizers = fertilizers.filter((fertilizer) => {
+        return (
+            fertilizer.fername.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            fertilizer.fermade.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+    });
 
-    <Link to={"/addfertilizer"} className='add-btn'>Add Fertilizer</Link>
-        <table>
-            <thead>
-                <tr>
-                    <th>Fertilizer Name</th>
-                    <th>Fertilizer Details</th>
-                    <th>Fertilizer Type</th>
-                    <th>Manufacturing company</th>
-                    <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Actions</th>
-                </tr>
-            </thead>
+    return (
+        <div className="table-container">
+            <div className="action-bar">
+                {/* Left-side buttons */}
+                <div className="button-group">
+                    <Link to={"/addfertilizer"} className='add-btn'>Add Fertilizer</Link>
+                    <button className='add-btn' onClick={downloadReport} style={{ marginRight: '10px' }}>Download Report</button>
+                    <button className='add-btn' onClick={handleUserFeedback}>User Feedback</button> {/* New User Feedback Button */}
+                </div>
+                
+                {/* Right-side search bar */}
+                <div className="search-container">
+                    <input 
+                        type="text" 
+                        placeholder="Search by Name or Company" 
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        className="search-input"
+                    />
+                    <FaSearch className="search-icon" />
+                </div>
+            </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fertilizer Name</th>
+                        <th>Fertilizer Details</th>
+                        <th>Manufacturing Company</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
 
-            <tbody>
-                {
-                    fertilizers.map((fertilizer,index)=>{
-
-                        return(
-                            <tr key={fertilizer._id}>
-                              
+                <tbody>
+                    {filteredFertilizers.map((fertilizer) => (
+                        <tr key={fertilizer._id}>
                             <td>{fertilizer.fername}</td>
                             <td>{fertilizer.ferdetails}</td>
-                            <td>{fertilizer.fertype}</td>
                             <td>{fertilizer.fermade}</td>
-                            <td >
+                            <td>
                                 <div className='action-buttons'>
-                                <Link to={'/editfertilizer/'+ fertilizer._id} className="update-btn" >Update</Link>
-                                <button onClick={() =>fertilizerdelete(fertilizer._id)} className="delete-btn" >Delete</button>
+                                    <Link to={'/editfertilizer/' + fertilizer._id} className="update-btn">Update</Link>
+                                    <button onClick={() => fertilizerdelete(fertilizer._id)} className="delete-btn">Delete</button>
                                 </div>
                             </td>
                         </tr>
-
-                        )
-
-
-
-                    })
-
-                }
-               
-            </tbody>
-
-
-        </table>
-
-
-</div>
-  )
+                    ))}
+                </tbody>
+            </table>
+        </div>
+    );
 }
 
-export default Fertilizer
+export default Fertilizer;
