@@ -1,6 +1,32 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Button, Nav, Card, Form } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
+
+import genetic from '../images/features/DNA.png';
+import recommend from '../images/features/Fertilizer.png';
+import distribute from '../images/features/Warehouse.png';
+import pest from '../images/features/Insect.png';
+
+import benefit1 from '../images/descriptions/bene1.png'
+import benefit2 from '../images/descriptions/bene2.png'
+import benefit3 from '../images/descriptions/bene3.png'
+import benefit4 from '../images/descriptions/bene4.png'
+
+import farmer1 from '../images/farmers/farmer1.jpg'
+import farmer2 from '../images/farmers/farmer2.jpg'
+import farmer3 from '../images/farmers/farmer3.jpg'
+
+import m1 from '../images/map/m1.png'
+import m2 from '../images/map/m2.png'
+import m3 from '../images/map/m3.png'
+import m4 from '../images/map/m4.png'
+
+import f1 from '../images/footer/Facebook.png'
+import f2 from '../images/footer/Instagram.png'
+import f3 from '../images/footer/TwitterX.png'
+
+import video from '../videos/farming2.mp4'
+
 import '../styles/Hero.css';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';

@@ -1,79 +1,194 @@
 import Fertilizer from "../model/fertilizerModel.js";
+import PDFDocument from 'pdfkit'; 
 
-export const fcreate = async (req, res) => {
-  try {
-    const fertilizerData = new Fertilizer(req.body);
-    if (!fertilizerData) {
-      return res.status(404).json({ msg: "Fertilizer data not found" });
+
+
+
+
+
+export const generateFertilizerReport = async (req, res) => {
+    try {
+        // Fetch all fertilizers from the database
+        const fertilizers = await Fertilizer.find();
+
+        if (fertilizers.length === 0) {
+            return res.status(404).json({ message: "No fertilizers found" });
+        }
+
+        // Initialize PDF document
+        const doc = new PDFDocument();
+        let filename = "fertilizer_report.pdf";
+
+        // Set headers for the PDF response
+        res.setHeader('Content-disposition', `attachment; filename="${filename}"`);
+        res.setHeader('Content-type', 'application/pdf');
+        doc.pipe(res); // Stream the generated PDF to the response
+
+        // Draw green background for "SmartAgri"
+        doc.rect(0, 0, doc.page.width, 100).fill('green'); // Green rectangle for background
+        doc.fillColor('white').fontSize(24).text("SmartAgri", { align: 'center', underline: true });
+        doc.moveDown();
+
+        // Add current date
+        const currentDate = new Date().toLocaleDateString();
+        doc.fillColor('black').fontSize(12).text(`Date: ${currentDate}`, { align: 'center' });
+        doc.moveDown();
+
+        // Report Title
+        doc.fontSize(20).text("Fertilizer Recommendation Report", { align: 'center' });
+        doc.moveDown();
+
+        // Summary section
+        const totalFertilizers = fertilizers.length;
+        const fertilizerTypes = [...new Set(fertilizers.map(f => f.fertype))];
+        const totalTypes = fertilizerTypes.length;
+
+        doc.fontSize(14).text(`Total Fertilizers: ${totalFertilizers}`);
+        doc.text(`Unique Fertilizer Types: ${totalTypes}`);
+        doc.moveDown();
+
+        // Display Unique Fertilizer Names
+        doc.fontSize(16).text("Unique Fertilizer Types:", { underline: true });
+        doc.moveDown();
+
+        fertilizerTypes.forEach((type, index) => {
+            doc.fontSize(12).text(`${index + 1}. ${type}`);
+            doc.moveDown();
+        });
+
+        // Fertilizer Details Header
+        doc.fontSize(16).text("Fertilizer Details:", { underline: true });
+        doc.moveDown();
+
+        // Fertilizer Details (Point-wise)
+        fertilizers.forEach((fertilizer, index) => {
+            doc.fontSize(12).text(`${index + 1}. Name: ${fertilizer.fername}`);
+            doc.list([ // Using a list for point-wise structure
+                `Details: ${fertilizer.ferdetails}`,
+                `Made By: ${fertilizer.fermade}`
+            ]);
+            doc.moveDown();
+        });
+
+        // Finalize the PDF and end the document
+        doc.end();
+    } catch (error) {
+        res.status(500).json({ message: "Error generating report", error: error.message });
     }
-    const savedData = await fertilizerData.save();
-    res
-      .status(200)
-      .json({ msg: "Ferilizer Added Successfully", data: savedData });
-  } catch (error) {
-    res.status(500).json({ error: error });
-  }
 };
 
-export const fgetAll = async (req, res) => {
-  try {
-    const fertilizerData = await Fertilizer.find();
 
-    if (!fertilizerData) {
-      return res.status(404).json({ msg: "Fertilizer data not found" });
+
+export const fcreate = async(req, res)=>{
+    try{
+
+        const fertilizerData = new Fertilizer(req.body);
+        if(!fertilizerData){
+            return res.status(404).json({msg: "Fertilizer data not found"});
+
+        }
+        const savedDatga = await fertilizerData.save();
+        res.status(200).json({msg:"Ferilizer Added Successfully"});
+
+
+    }catch (error){
+        res.status(500).json({error: error});
+
+    }
     }
 
-    res.status(200).json(fertilizerData);
-  } catch (error) {
-    res.status(500).json({ error: error });
-  }
-};
+    
+    export const fgetAll = async(req, res) => {
+        try{
+            const fertilizerData = await Fertilizer.find();
 
-export const fgetone = async (req, res) => {
-  try {
-    const id = req.params.id;
-    const fertilizerExist = await Fertilizer.findById(id);
+            if(!fertilizerData){
+                return res.status(404).json({msg: "Fertilizer data not found"});
+            }
 
-    if (!fertilizerExist) {
-      return res.status(404).json({ msg: "Fertilizer data not found" });
+            res.status(200).json(fertilizerData);
+        }catch(error){
+            res.status(500).json({error: error});
+        }
     }
 
-    res.status(200).json(fertilizerExist);
-  } catch (error) {
-    res.status(500).json({ error: error });
-  }
-};
+    
 
-export const fupdate = async (req, res) => {
-  try {
-    const id = req.params.id;
-    const fertilizerExist = await Fertilizer.findById(id);
 
-    if (!fertilizerExist) {
-      return res.status(401).json({ msg: "Fertilizer data not found" });
+    export const fgetone = async(req, res) => {
+        try{
+            const id = req.params.id;
+            const fertilizerExist = await Fertilizer.findById(id);
+
+            if(!fertilizerExist){
+                return res.status(404).json({msg: "Fertilizer data not found"});
+            }
+
+            res.status(200).json(fertilizerExist);
+        }catch(error){
+            res.status(500).json({error: error});
+        }
     }
 
-    const fupdatedData = await Fertilizer.findByIdAndUpdate(id, req.body, {
-      new: true,
-    });
-    res.status(200).json({ msg: "Updated Successfully" });
-  } catch (error) {
-    res.status(500).json({ error: error });
-  }
-};
+    export const fupdate = async(req, res) => {
+        try{
+            const id = req.params.id;
+            const fertilizerExist = await Fertilizer.findById(id);
 
-export const fdelete = async (req, res) => {
-  try {
-    const id = req.params.id;
-    const fertilizerExist = await Fertilizer.findById(id);
+            if(!fertilizerExist){
+                return res.status(401).json({msg: "Fertilizer data not found"});
+            }
 
-    if (!fertilizerExist) {
-      return res.status(401).json({ msg: "Fertilizer data not found" });
+            const fupdatedData = await Fertilizer.findByIdAndUpdate(id,req.body,{new:true});
+            res.status(200).json({msg:"Updated Successfully"});
+        }catch(error){
+            res.status(500).json({error: error});
+        }
     }
 
-    await Fertilizer.findByIdAndDelete(id);
-    res.status(200).json({ msg: "Fertilizer deleted successfully" });
-  } catch (error) {
-    res.status(500).json({ error: error });
-  }
-};
+    export const fdelete = async(req, res) => {
+        try{
+            const id = req.params.id;
+            const fertilizerExist = await Fertilizer.findById(id);
+
+            if(!fertilizerExist){
+                return res.status(401).json({msg: "Fertilizer data not found"});
+            }
+
+           await Fertilizer.findByIdAndDelete(id);
+            res.status(200).json({msg:"Fertilizer deleted successfully"});
+        }catch(error){
+            res.status(500).json({error: error});
+        }
+    }
+
+
+
+
+    
+
+    // Function to recommend fertilizers based on user input
+    export const recommendFertilizers = async (req, res) => {
+      const { fercrop, fersoil, ferclimate, fername } = req.query;
+    
+      try {
+        const query = {};
+        
+        // Add conditions to the query object based on user's input
+        if (fercrop) query.fercrop = fercrop;
+        if (fersoil) query.fersoil = fersoil;
+        if (ferclimate) query.ferclimate = ferclimate;
+        if (fername) query.fername = new RegExp(fername, 'i'); // Case-insensitive search for fertilizer name
+    
+        const fertilizers = await Fertilizer.find(query);
+        
+        if (fertilizers.length === 0) {
+          return res.status(404).json({ message: "No fertilizers found for the given conditions." });
+        }
+    
+        res.json(fertilizers);
+      } catch (error) {
+        res.status(500).json({ message: "Server error: " + error.message });
+      }
+    };
+    

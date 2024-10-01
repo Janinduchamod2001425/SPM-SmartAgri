@@ -11,7 +11,10 @@ function Addfertilizer() {
         fername:"",
         ferdetails:"",
         fertype:"",
-        fermade:""
+        fermade:"",
+        fersoil:"",
+        fercrop:"",
+        ferclimate:"",
     }
     const [fertilizer ,setFertilizer] = useState(fertilizers);
 
@@ -63,6 +66,18 @@ function Addfertilizer() {
                 <div className="inputGroup">
                     <label htmlFor="company">Manufacturing company</label>
                     <input type="text" onChange ={inputHandler} id="fermade" name="fermade" autoComplete="off" placeholder="Manufacturing company"></input>
+                </div>
+                <div className="inputGroup">
+                    <label htmlFor="company">Soil Type</label>
+                    <input type="text" onChange ={inputHandler} id="soil" name="fersoil" autoComplete="off" placeholder="Soil Type"></input>
+                </div>
+                <div className="inputGroup">
+                    <label htmlFor="company">Crop Type</label>
+                    <input type="text" onChange ={inputHandler} id="crop" name="fercrop" autoComplete="off" placeholder="Crop Type"></input>
+                </div>
+                <div className="inputGroup">
+                    <label htmlFor="company">Climate Type</label>
+                    <input type="text" onChange ={inputHandler} id="climate" name="ferclimate" autoComplete="off" placeholder="Climate Type"></input>
                 </div>
 
                 <div className="inputGroup">
