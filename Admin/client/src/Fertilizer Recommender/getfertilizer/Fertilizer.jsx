@@ -4,11 +4,13 @@ import axios from 'axios';
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { FaSearch } from 'react-icons/fa'; // Import FontAwesome search icon
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 
 function Fertilizer() {
     const [fertilizers, setFertilizers] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
-
+    const navigate = useNavigate(); // Hook for navigation  
+    
     useEffect(() => {
         const fetchData = async () => {
             const response = await axios.get("http://localhost:3000/api/fgetall");
@@ -49,10 +51,9 @@ function Fertilizer() {
     };
 
     // Function to handle user feedback
-    const handleUserFeedback = () => {
-        // Navigate to user feedback page or show feedback form/modal
-        // For example: history.push('/feedback');
-        toast.info("User feedback functionality not implemented yet!");
+    const navigateToFeedbackPageadmin = () => {
+        navigate('/admin_feedback'); // Navigate to the feedback page
+        //toast.info("User feedback functionality not implemented yet!");
     };
 
     // Filter fertilizers based on the search term
@@ -70,7 +71,7 @@ function Fertilizer() {
                 <div className="button-group">
                     <Link to={"/addfertilizer"} className='add-btn'>Add Fertilizer</Link>
                     <button className='add-btn' onClick={downloadReport} style={{ marginRight: '10px' }}>Download Report</button>
-                    <button className='add-btn' onClick={handleUserFeedback}>User Feedback</button> {/* New User Feedback Button */}
+                    <button className='add-btn' onClick={navigateToFeedbackPageadmin}>User Feedback</button> {/* New User Feedback Button */}
                 </div>
                 
                 {/* Right-side search bar */}

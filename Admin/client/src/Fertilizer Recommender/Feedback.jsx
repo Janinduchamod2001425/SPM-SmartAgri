@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import "./fertilizerS.css";
+import "./getfertilizer/fertilizerS.css";
 import axios from 'axios';
 import toast from "react-hot-toast";
 
@@ -11,7 +11,7 @@ function Feedback() {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await axios.get("http://localhost:3000/api/feedbackgetall");
+            const response = await axios.get("http://localhost:3000/api/feedbackgetAll");
             setFeedbacks(response.data);
         };
 
@@ -29,14 +29,10 @@ function Feedback() {
     };
 
   
-  
-
-   
-
     return (
         <div className="table-container">
             <div className="action-bar">
-               
+               <p>User Feedback</p>
                 
                
             </div>
@@ -53,7 +49,7 @@ function Feedback() {
                 </thead>
 
                 <tbody>
-                    {filteredFeedbacks.map((feedback) => (
+                    {feedbacks.map((feedback) => (
                         <tr key={feedback._id}>
                             <td>{feedback.feedbackname}</td>
                             <td>{feedback.feedbackconsern}</td>

@@ -89,7 +89,7 @@ function App() {
       element: <Layout><Editfertilizer /></Layout>,
     },
     {
-      path: "/fertilizer_feedback",
+      path: "//admin_feedback",
       element: <Layout><Feedback /></Layout>,
     },
     

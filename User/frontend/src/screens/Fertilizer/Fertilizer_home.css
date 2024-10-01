@@ -1,16 +1,12 @@
-.fertilizer-container {
-  background-image: url('/image2.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 20px;
-  min-height: calc(100vh - 80px);
-  margin-top: 80px;
+.fertilizer-imagecover{
+  background-image: url('./image1.jpg'); 
+  margin-top: -8px;
+  width: 1290px;
 }
 
 .content-container {
   background-color: rgba(255, 255, 255, 0.9);
-  padding: 20px;
+  padding: 10px;
   border-radius: 10px;
   max-width: 900px;
   margin: 0 auto;
@@ -189,4 +185,3 @@
 .recommendation-button:hover {
   background-color: #0056b3;
 }
-

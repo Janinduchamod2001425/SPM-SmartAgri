@@ -85,9 +85,13 @@ function Fertilizer_home() {
     navigate('/fertilizer_feedback'); // Navigate to the feedback page
   };
 
+
+
   return (
-    <div className="fertilizer-container">
+    <div className="fertilizer-imagecover">
       <Navigation />
+     
+
       <div className="content-container">
         <h2>Fertilizer Recommendation</h2>
         <p className="description">

@@ -8,6 +8,7 @@ import geneticRoutes from "./routes/geneticRoutes.js";
 import pestRoutes from "./routes/pestRoutes.js";
 import fertilizerRoutes from "./routes/fertilizerRoutes.js";
 import warehouseRoute from "./routes/warehouseRoutes.js";
+import feedbackRoutes from "./routes/feedbackRoutes.js";
 
 const app = express();
 app.use(bodyParser.json());
@@ -31,4 +32,5 @@ app.use("/api", route);
 app.use("/api", geneticRoutes);
 app.use("/api", pestRoutes);
 app.use("/api", fertilizerRoutes);
+app.use("/api",feedbackRoutes);
 app.use("/api", warehouseRoute);

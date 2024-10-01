@@ -5,7 +5,7 @@ import '../styles/Navigation.css';
 
 const Navigation = () => {
     return (
-        <div>
+        <div className='navigation_bar'>
             {/* Responsive Navbar */}
             <Navbar expand="lg" bg="transparent" collapseOnSelect className="nav">
                 <Container>
