@@ -1,0 +1,92 @@
+/* CropDetailModel.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+.modal-overlay-crop {
+  position: fixed;
+  border-radius: 30px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensures modal is above other content */
+  animation: fadeIn 0.3s ease; /* Animation for fade in */
+}
+
+.modal-content-crop {
+  background-color: #ace6a5; /* White background for content */
+  border-radius: 30px; /* Rounded corners */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  padding: 30px; /* Padding for content */
+  max-width: 800px; /* Maximum width */
+  width: 90%; /* Responsive width */
+  position: relative; /* For positioning the close button */
+  overflow-y: auto; /* Scroll if content is too long */
+  max-height: 80vh; /* Maximum height of the modal */
+}
+
+/* Close button styles */
+.close-btn-crop {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none; /* Transparent background */
+  border: none; /* No border */
+  font-size: 24px; /* Large close icon */
+  cursor: pointer; /* Pointer cursor on hover */
+  color: #333; /* Close button color */
+  transition: color 0.3s; /* Transition for hover effect */
+}
+
+.close-btn-crop:hover {
+  color: #e74c3c; /* Change color on hover */
+}
+
+/* Crop detail title */
+h1 {
+  font-size: 24px; /* Size for title */
+  color: #2c3e50; /* Darker text color */
+  margin-bottom: 15px; /* Margin below title */
+}
+
+/* Crop detail image */
+.crops_images {
+  width: 100%; /* Full width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 20px; /* Rounded corners for image */
+  margin-bottom: 20px; /* Space below image */
+}
+
+/* General paragraph styles */
+p {
+  font-size: 16px; /* Standard font size */
+  color: #34495e; /* Slightly lighter text color */
+  margin-bottom: 10px; /* Space below paragraphs */
+}
+
+/* Adding animation for fade in effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Start transparent */
+  }
+  to {
+    opacity: 1; /* End fully visible */
+  }
+}
+
+
+.cropName{
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 40px;
+  text-align: center;
+}
+
+.field{
+  font-size: 20px;
+}

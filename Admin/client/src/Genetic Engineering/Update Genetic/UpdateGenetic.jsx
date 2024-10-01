@@ -138,7 +138,7 @@ const UpdateGenetic = () => {
                     <input type='text' name='social_impact' onChange={handleChange} value={geneticData.social_impact} placeholder='Social Impact' />
                 </div>
 
-                <button type='submit' className='submit-btn'>Add Genetic Data</button>
+                <button type='submit' className='submit-btn'>Update Genetic Data</button>
             </form>
         </div>
     );

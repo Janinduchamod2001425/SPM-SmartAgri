@@ -10,6 +10,7 @@ import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 // Routes
 import userRoutes from './routes/userRoutes.js';
 import traitRoutes from './routes/traitRoutes.js';
+import geneticRoutes from "./routes/geneticRoutes.js";
 
 const port = process.env.PORT || 5000;
 
@@ -25,6 +26,7 @@ app.use(cookieParser());
 // Routes
 app.use('/api/users', userRoutes);
 app.use('/api/traits', traitRoutes);
+app.use('/api/crops', geneticRoutes);
 
 app.get('/', (req, res) => {
   res.send('Server is ready');
