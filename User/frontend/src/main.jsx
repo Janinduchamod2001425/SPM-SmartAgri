@@ -38,10 +38,13 @@ const router = createBrowserRouter(
         <Route path='/warehouse_home' element={<Warehouse_Home />}/>
         <Route path='/pest_home' element={<Pest_Home />}/>
         <Route path='/fertilizer_feedback' element={<FertilizerFeedback/>}/>
+
       </Route>
     </Route>
   )
 );
+
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={store}>
