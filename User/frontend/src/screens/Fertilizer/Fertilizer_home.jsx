@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router-dom'; // Import useNavigate for naviga
 import Navigation from '../../components/Navigation'; 
 import axios from 'axios';
 import { FaSeedling, FaStar } from 'react-icons/fa'; 
-import '../../screens/Fertilizer/Fertilizer_home.css'; 
+import './Fertilizer_home.css'; 
 
-import Gene from '../../images/fertilizer/f1.jpg'
+import Gene from '../../images/Fertilizer/f1.jpg'
 
 function Fertilizer_home() {
   const [fercrop, setFercrop] = useState('');
@@ -28,6 +28,7 @@ function Fertilizer_home() {
     { crop: 'Maize', soils: ['Loam', 'Clay'], climates: ['Dry', 'Wet'] },
     { crop: 'Pepper', soils: ['Clay', 'Loam'], climates: ['Intermediate', 'Wet'] },
     { crop: 'Vegetables', soils: ['Loam', 'Sandy'], climates: ['Dry', 'Wet'] },
+    
   ];
 
   useEffect(() => {
@@ -54,7 +55,7 @@ function Fertilizer_home() {
 
     setErrors({});
     try {
-      const response = await axios.get('http://localhost:3000/api/recommendFertilizer', {
+      const response = await axios.get('http://localhost:4000/api/recommendFertilizer', {
         params: { fercrop, fersoil, ferclimate, fername },
       });
       setFertilizers(response.data);
@@ -93,8 +94,8 @@ function Fertilizer_home() {
     <div className="fertilizer-imagecover">
       <Navigation />
      
-      {/* Cover Image */}
-      <img src={Gene} className="cover_fertilizer" />
+     {/* Cover Image */}
+     <img src={Gene} className="cover_image_ferti" />
 
       <div className="content-container">
         <h2>Fertilizer Recommendation</h2>
