@@ -87,7 +87,7 @@ const LoginScreen = () => {
               disabled={isLoading}
               type="submit"
               variant="success"
-              className="w-100 mt-3 login"
+              className="w-100 mt-3"
             >
               Sign In
             </Button>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Navigation from '../../components/Navigation';
 import { useMatchTraitsMutation } from '../../slices/traitApiSlice';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Table } from 'react-bootstrap';
 import { toast } from 'react-toastify';
 import Loader from '../../components/Loader';
 import Gene from '../../images/Genetic/trait.svg';
@@ -13,7 +13,7 @@ const Genetic_Trait = () => {
     soilType: '',
     pest: '',
   });
-  
+
   const [matchingCrops, setMatchingCrops] = useState([]);
   const [matchTraits, { isLoading, error }] = useMatchTraitsMutation();
 
@@ -28,7 +28,7 @@ const Genetic_Trait = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const crops = await matchTraits(formData).unwrap(); // Use unwrap for better error handling
+      const crops = await matchTraits(formData).unwrap();
       setMatchingCrops(crops);
       toast.success('Matching crops found successfully!', {
         position: "top-right",
@@ -66,39 +66,36 @@ const Genetic_Trait = () => {
         </div>
       </section>
 
-      {/* Trait Matching Form */}
-      <h2 id='trait' className="text-center mb-4 trait_title">Match Traits to Find Suitable Crops</h2>
-      <Form onSubmit={handleSubmit} className="mb-4 trait_form">
-        <Form.Group controlId="soilType">
-          <Form.Label className="fw-bold trait_label">Soil Type:</Form.Label>
-          <Form.Control className='trait_field'
-            type="text"
-            name="soilType"
-            value={formData.soilType}
-            onChange={handleChange}
-            required
-            placeholder="Enter soil type"
-          />
-        </Form.Group>
-
-        <Form.Group controlId="pest">
-          <Form.Label className="fw-bold trait_label">Pests/Diseases:</Form.Label>
-          <Form.Control className='trait_field'
-            type="text"
-            name="pest"
-            value={formData.pest}
-            onChange={handleChange}
-            required
-            placeholder="Enter pest or disease information"
-          />
-        </Form.Group>
-
-        <div className="trait_button">
-          <Button type="submit" variant="success" disabled={isLoading}>
-            {isLoading ? <Loader /> : "Find Matching Crops"}
-          </Button>
-        </div>
-      </Form>
+      {/* Instruction Table */}
+      <section className="instruction-section">
+        <h2 className="text-center mb-4 ins_trait">How to Match Traits</h2>
+        <Table striped bordered hover className="instruction-table">
+          <thead>
+            <tr>
+              <th>Trait</th>
+              <th>How to Identify</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Soil Type</td>
+              <td>Test the soil pH, texture (sand, clay, loam), and nutrient content.</td>
+            </tr>
+            <tr>
+              <td>Pests/Diseases</td>
+              <td>Identify common pests or diseases affecting your crops (e.g., aphids, fungal diseases).</td>
+            </tr>
+            <tr>
+              <td>Weather Conditions</td>
+              <td>Note the average rainfall, temperature, and humidity in your region.</td>
+            </tr>
+            <tr>
+              <td>Water Availability</td>
+              <td>Assess the irrigation methods and available water sources (e.g., river, well).</td>
+            </tr>
+          </tbody>
+        </Table>
+      </section>
 
       {matchingCrops.length > 0 && (
         <ul className="mt-4">
@@ -110,7 +107,62 @@ const Genetic_Trait = () => {
         </ul>
       )}
 
-      {error && <p className="text-danger">Error: {error.message}</p>} {/* Error handling */}
+      {error && <p className="text-danger">No Matching Traits{error.message}</p>} {/* Error handling */}
+
+      {/* Trait Matching Form */}
+      <h2 id='trait' className="text-center mb-4 trait_title">Match Traits to Find Suitable Crops</h2>
+      <Form onSubmit={handleSubmit} className="mb-4 trait_form">
+        <Form.Group controlId="soilType">
+          <Form.Label className="fw-bold trait_label">Soil Type:</Form.Label>
+          <Form.Control
+            as="select"
+            name="soilType"
+            value={formData.soilType}
+            onChange={handleChange}
+            required
+            className="trait_field"
+          >
+            <option value="">Select soil type</option>
+            <option value="Loamy">Loamy</option>
+            <option value="Silty Clay">Silty Clay</option>
+            <option value="Clayey">Clayey</option>
+            <option value="Fertile Loam">Fertile Loam</option>
+            <option value="Clay">Clay</option>
+            <option value="Sandy Loam">Sandy Loam</option>
+          </Form.Control>
+        </Form.Group>
+        <br />
+        <Form.Group controlId="pest">
+          <Form.Label className="fw-bold trait_label">Pests/Diseases:</Form.Label>
+          <Form.Control
+            as="select"
+            name="pest"
+            value={formData.pest}
+            onChange={handleChange}
+            required
+            className="trait_field"
+          >
+            <option value="">Select pest or disease</option>
+            <option value="Resistant to rust fungus">Resistant to rust fungus</option>
+            <option value="Resistant to Fusarium wilt, but susceptible to aphids">Resistant to Fusarium wilt, but susceptible to aphids</option>
+            <option value="Resistance to European corn borer">Resistance to European corn borer</option>
+            <option value="Enhanced resistance to bacterial blight">Enhanced resistance to bacterial blight</option>
+            <option value="Improved resistance to soybean aphid">Improved resistance to soybean aphid</option>
+            <option value="Resistance to cotton bollworm">Resistance to cotton bollworm</option>
+            <option value="Enhanced resistance to late blight">Enhanced resistance to late blight</option>
+            <option value="Increased resistance to powdery mildew">Increased resistance to powdery mildew</option>
+          </Form.Control>
+        </Form.Group>
+
+        <br />
+        <div className="trait_button">
+          <Button type="submit" variant="success" disabled={isLoading}>
+            {isLoading ? <Loader /> : "Find Matching Crops"}
+          </Button>
+        </div>
+      </Form>
+
+      
     </div>
   );
 }

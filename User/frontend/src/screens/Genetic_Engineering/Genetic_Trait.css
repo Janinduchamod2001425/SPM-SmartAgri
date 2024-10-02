@@ -5,13 +5,21 @@
     font-weight: 800;
     font-style: normal;
     font-size: 50px;
-    margin-top: 100px;
+    margin-top: 40px;
+}
+
+.ins_trait{
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 50px;
+  margin-top: 40px;
 }
 
 .trait_form {
     max-width: 600px;
     margin: 0 auto;
-    background-color: #f9f9f9;
+    background-color: #a1e872;
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -119,3 +127,59 @@
       font-size: 1rem;
     }
   }
+
+
+  /* Instruction Table Section */
+.instruction-section {
+  padding: 2rem;
+  background-color: #f9f9f9; /* Light background color for contrast */
+}
+
+.instruction-table {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  text-align: left;
+  background-color: #fff; /* White background for the table */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for a raised effect */
+}
+
+.instruction-table th, 
+.instruction-table td {
+  padding: 1rem;
+  border: 1px solid #ddd; /* Light border between rows */
+}
+
+.instruction-table th {
+  background-color: #087f14; /* Header background color (e.g., blue) */
+  color: #fff; /* White text for contrast */
+  text-transform: uppercase; /* Uppercase headers for style */
+  font-weight: bold;
+}
+
+.instruction-table td {
+  background-color: #f2f2f2; /* Light gray background for table cells */
+  color: #333; /* Darker text for readability */
+}
+
+.instruction-table tr:nth-child(even) {
+  background-color: #f9f9f9; /* Alternating row background for better readability */
+}
+
+.instruction-table tr:hover {
+  background-color: #e9ecef; /* Slight hover effect to improve interactivity */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .instruction-table th, 
+  .instruction-table td {
+    font-size: 0.875rem; /* Smaller font size on mobile devices */
+    padding: 0.75rem;
+  }
+
+  .instruction-section {
+    padding: 1rem; /* Smaller padding for mobile devices */
+  }
+}

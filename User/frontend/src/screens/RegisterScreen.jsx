@@ -147,7 +147,7 @@ const RegisterScreen = () => {
               <div className="button-container">
                 <Button
                   type="submit"
-                  className="mt-3 reg_btn"
+                  className="mt-3"
                   variant="success"
                 >
                   Register
