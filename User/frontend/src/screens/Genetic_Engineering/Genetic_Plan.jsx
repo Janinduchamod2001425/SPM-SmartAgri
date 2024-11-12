@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import Navigation from '../../components/Navigation';
 import { useCreatePlanMutation } from '../../slices/traitApiSlice';
 import { useNavigate } from 'react-router-dom';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Modal } from 'react-bootstrap';
 import { toast } from 'react-toastify';
 import Loader from '../../components/Loader';
-
 import '../../screens/Genetic_Engineering/Genetic_Plan.css';
 import Plan from '../../images/Genetic/plan.svg';
 
@@ -17,8 +16,11 @@ const Genetic_Plan = () => {
   const [soilType, setSoilType] = useState("");
   const [pest, setPest] = useState("");
   const [plantingDate, setPlantingDate] = useState(null);
+  const [planDetails, setPlanDetails] = useState(null);
+  const [showPlanModal, setShowPlanModal] = useState(false);
 
   const [createPlan, { isLoading }] = useCreatePlanMutation();
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const navigate = useNavigate();
 
   const submitHandler = async (e) => {
@@ -34,6 +36,8 @@ const Genetic_Plan = () => {
         pest,
         plantingDate,
       }).unwrap();
+
+      setIsSubmitted(true);
       toast.success("Genetic Plan created successfully", {
         position: "top-right",
         autoClose: 3000,
@@ -46,7 +50,12 @@ const Genetic_Plan = () => {
           fontFamily: "monospace",
         },
       });
-      navigate("/genetic_home");
+
+      // Generate the genetic plan details
+      const generatedPlan = generatePlan(username, cropType, trait, farmSize, soilType, pest, plantingDate);
+      setPlanDetails(generatedPlan);
+      setShowPlanModal(true);
+
     } catch (err) {
       toast.error(err?.data?.message || err.error, {
         position: "top-right",
@@ -63,15 +72,69 @@ const Genetic_Plan = () => {
     }
   };
 
+  // Function to generate the genetic plan based on user inputs
+  const generatePlan = (username, cropType, trait, farmSize, soilType, pest, plantingDate) => {
+    const steps = getCultivationSteps(cropType, soilType);
+    return {
+      title: `${username}'s Genetic Engineering Plan`,
+      details: [
+        `Crop Type: ${cropType}`,
+        `Desired Trait: ${trait}`,
+        `Farm Size: ${farmSize}`,
+        `Soil Type: ${soilType}`,
+        `Pest Information: ${pest}`,
+        `Planting Date: ${plantingDate}`,
+      ],
+      steps, // Add steps to the plan details
+    };
+  };
+
+  // Function to get step-by-step cultivation guide based on crop type and soil type
+  const getCultivationSteps = (cropType, soilType) => {
+    switch (cropType) {
+      case 'Rice':
+        return [
+          "1. Prepare the field by plowing and leveling.",
+          "2. Create bunds (embankments) to retain water.",
+          "3. Flood the field to a depth of 5-10 cm.",
+          "4. Sow seeds directly or transplant seedlings when 25-30 days old.",
+          "5. Maintain water levels throughout the growing period.",
+          "6. Apply fertilizers as per soil tests.",
+          "7. Monitor for pests and diseases, and apply treatments as needed.",
+          "8. Harvest when grains are firm and moisture content is low."
+        ];
+      case 'Wheat':
+        return [
+          "1. Prepare the land by tilling and leveling.",
+          "2. Apply well-rotted manure and fertilizers as needed.",
+          "3. Sow seeds in rows 15-20 cm apart.",
+          "4. Irrigate as necessary, especially during dry spells.",
+          "5. Control weeds through mechanical or chemical means.",
+          "6. Monitor for pests, and take action if necessary.",
+          "7. Harvest when grains are hard and golden."
+        ];
+      case 'Corn':
+        return [
+          "1. Prepare the soil with good tillage.",
+          "2. Plant seeds 2-3 cm deep in rows 70-90 cm apart.",
+          "3. Water regularly, especially during flowering and grain filling.",
+          "4. Fertilize based on soil tests.",
+          "5. Watch for pest infestations and apply pesticides if needed.",
+          "6. Harvest when kernels are firm and the husks turn brown."
+        ];
+      default:
+        return ["No specific steps available for this crop type."];
+    }
+  };
+
+  const handleClose = () => {
+    setShowPlanModal(false);
+  };
+
   return (
     <div>
-      {/* Navigation Panel */}
       <Navigation />
-
-      {/* Cover Image */}
       <img src={Plan} className="cover_image" alt="Cover" />
-
-      {/* Hero Section */}
       <section className="genetic-hero">
         <div className="hero-content">
           <h1>
@@ -92,13 +155,11 @@ const Genetic_Plan = () => {
         </div>
       </section>
 
-      {/* Request Form */}
       <section id="form">
         <div className="form_content">
           <p className="packageTopic">Genetic Engineering Plan Request</p>
 
           <Form onSubmit={submitHandler}>
-            {/* Row 1 */}
             <div className="input-row">
               <Form.Group className="set my-2" controlId="username">
                 <Form.Label className="labelName fw-bold">Username</Form.Label>
@@ -116,16 +177,20 @@ const Genetic_Plan = () => {
                 <Form.Label className="labelName fw-bold">Crop Type</Form.Label>
                 <Form.Control
                   className="textview"
-                  type="text"
-                  placeholder="Enter crop type"
+                  as="select"
                   value={cropType}
                   onChange={(e) => setCropType(e.target.value)}
                   required
-                />
+                >
+                  <option value="">Select crop type</option>
+                  <option value="Rice">Rice</option>
+                  <option value="Wheat">Wheat</option>
+                  <option value="Corn">Corn</option>
+                  {/* Add more crop types as needed */}
+                </Form.Control>
               </Form.Group>
             </div>
 
-            {/* Row 2 */}
             <div className="input-row">
               <Form.Group className="set my-2" controlId="trait">
                 <Form.Label className="labelName fw-bold">Trait</Form.Label>
@@ -143,27 +208,37 @@ const Genetic_Plan = () => {
                 <Form.Label className="labelName fw-bold">Farm Size</Form.Label>
                 <Form.Control
                   className="textview"
-                  type="text"
-                  placeholder="Enter farm size (acres/hectares)"
+                  as="select"
                   value={farmSize}
                   onChange={(e) => setFarmSize(e.target.value)}
                   required
-                />
+                >
+                  <option value="">Select farm size</option>
+                  <option value="1 acre">1 acre</option>
+                  <option value="2 acres">2 acres</option>
+                  <option value="5 acres">5 acres</option>
+                  <option value="10 acres">10 acres</option>
+                  {/* Add more sizes as needed */}
+                </Form.Control>
               </Form.Group>
             </div>
 
-            {/* Row 3 */}
             <div className="input-row">
               <Form.Group className="set my-2" controlId="soilType">
                 <Form.Label className="labelName fw-bold">Soil Type</Form.Label>
                 <Form.Control
                   className="textview"
-                  type="text"
-                  placeholder="Enter soil type"
+                  as="select"
                   value={soilType}
                   onChange={(e) => setSoilType(e.target.value)}
                   required
-                />
+                >
+                  <option value="">Select soil type</option>
+                  <option value="Loamy">Loamy</option>
+                  <option value="Sandy">Sandy</option>
+                  <option value="Clay">Clay</option>
+                  {/* Add more soil types as needed */}
+                </Form.Control>
               </Form.Group>
 
               <Form.Group className="set my-2" controlId="pest">
@@ -179,7 +254,6 @@ const Genetic_Plan = () => {
               </Form.Group>
             </div>
 
-            {/* Row 4 */}
             <div className="input-row">
               <Form.Group className="set my-2" controlId="plantingDate">
                 <Form.Label className="labelName fw-bold">
@@ -207,15 +281,55 @@ const Genetic_Plan = () => {
             </div>
           </Form>
 
-          {/* Instructions for Farmers */}
-          <div className="text-center mt-3">
-            <p className="instructions">
-              We will review your request details, create a personalized plan,
-              and send it to you soon.
-            </p>
-          </div>
+          {isSubmitted && (
+            <div className="text-center mt-3">
+              <p className="instructions">
+                We will review your request details, create a personalized plan,
+                and send it to you soon.
+              </p>
+            </div>
+          )}
         </div>
       </section>
+
+      {/* Modal to display the generated plan */}
+      <Modal show={showPlanModal} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>{planDetails?.title || "Genetic Plan"}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {planDetails ? (
+            <>
+              <ul>
+                {planDetails.details && planDetails.details.length > 0 ? (
+                  planDetails.details.map((detail, index) => (
+                    <li key={index}>{detail}</li>
+                  ))
+                ) : (    
+                  <li>No details available.</li>
+                )}
+              </ul>  
+              <h5>Step-by-Step Cultivation Guide:</h5>
+              <ol>
+                {planDetails.steps && planDetails.steps.length > 0 ? (
+                  planDetails.steps.map((step, index) => (
+                    <li key={index}>{step}</li>
+                  ))
+                ) : (
+                  <li>No steps available.</li>
+                )}
+              </ol>
+            </>
+          ) : (
+            <p>Loading plan details...</p>
+          )}
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 };
