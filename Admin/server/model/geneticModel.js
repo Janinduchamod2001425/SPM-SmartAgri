@@ -1,18 +1,3 @@
-// import mongoose from "mongoose";
-
-// const geneticSchema = new mongoose.Schema(
-//   {
-//     name: { type: String, required: true },
-//     benefits: { type: String, required: true },
-//     risks: { type: String, required: true },
-//   },
-//   {
-//     timestamps: true,
-//   }
-// );
-
-// export default mongoose.model("Genetic", geneticSchema);
-
 import mongoose from "mongoose";
 
 const CropSchema = new mongoose.Schema({

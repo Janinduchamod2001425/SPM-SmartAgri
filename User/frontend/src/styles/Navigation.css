@@ -1,21 +1,28 @@
 /* General Styles for Navigation */
 .navigations {
-    margin-left: 2rem;
-    /* Adjusted margin for more flexibility */
+    margin-left: 80px;
     font-weight: bold;
-    color: #000;
+    color: #ffffff;
     position: relative;
-    padding: 10px;
+    margin-top: 20px;
     text-decoration: none;
     transition: color 0.3s ease-in-out;
+    background-color: #000000bb;
+    padding: 5px 15px;
+    border-radius: 30px;
+}
+
+.nav{
+    margin-left: 40px;
 }
 
 .navigations:hover {
-    color: #000;
+    color: #00f80c;
 }
-
+  
 .navigations.active {
-    border-bottom: 1px solid black;
+    background-color: #6cc95f;
+    color: black;
 }
 
 /* Hover effect for underlining with animation */
@@ -25,7 +32,9 @@
     left: 0;
     right: 0;
     bottom: 0;
-    height: 2px;
+    margin-bottom: -7px;
+    height: 3px;
+    border-radius: 30px;
     background-color: #087e5a;
     transform: scaleX(0);
     transition: transform 0.3s ease-in-out;

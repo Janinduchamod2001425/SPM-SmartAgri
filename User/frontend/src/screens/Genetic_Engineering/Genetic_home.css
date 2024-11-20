@@ -1,0 +1,522 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.cover_image {
+    margin-top: -8px;
+    width: 1519px;
+}
+
+.overview{
+    margin-top: 100px;
+    background-color: aqua;
+    height: 200px;
+    width: 200px;
+}
+
+.genetic-hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    background-color: rgba(240, 248, 255, 0.527);
+    padding: 10px 15px;
+    border-radius: 30px;
+    font-weight: 400;
+}
+
+.cta-btn {
+    background-color: #4caf50;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #45a049;
+}
+
+/* Benefits */
+
+.bene{
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    margin-top: 60px;
+}
+
+.bene_desc{
+    margin-top: 20px;
+    font-family: monospace;
+    font-weight: 900;
+}
+
+.bene_image{
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.bene_title{
+    font-family: monospace;
+    font-weight: bold;
+   font-size: 60px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.gene_desc{
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: inherit;
+    margin-top: -30px;
+    font-size: 35px;
+}
+
+.genetic-benefits {
+    margin-top: -20px;
+    padding: 60px 0;
+    text-align: center;
+    border-radius: 30px;
+}
+
+.benefits-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.benefits-container p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.benefits-boxes {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    
+}
+
+.benefit-box {
+    background-color: rgb(172, 245, 172);
+    padding: 20px;
+    border-radius: 30px;
+    width: 360px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.6s ease;
+    padding-top: 20px;
+}
+
+.benefit-box:hover {
+    transform: translateY(-10px);
+}
+
+.benefit-box h4 {
+    margin-top: 15px;
+    font-size: 1.5rem;
+}
+
+.benefit-box p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.intro_title{
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 40px;
+    margin-top: 20px;
+}
+
+.introduction{
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+.section-image {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    max-width: 400px; /* Limit maximum width */
+    border-radius: 8px; /* Rounded corners */
+    margin: 2rem 0; /* Margin for spacing */
+}
+
+.crop-images {
+    display: flex;
+    justify-content: space-between; /* Even spacing between images */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  }
+  
+  .crop-image-home {
+    width: 24%; /* Adjust width based on how many images you want in a row */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners */
+    margin: 1rem 0; /* Margin for spacing */
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 768px) {
+    .crop-image {
+      width: 100%; /* Full width on small screens */
+    }
+  }
+
+
+/* Section Styles */
+section {
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  section p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+  
+  section ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1.1rem;
+  }
+  
+section ul li {
+    margin-bottom: 1rem;
+}
+  
+.section-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+  
+  /* Button Styles */
+.section-buttons .cta-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+}
+
+
+/* Genetic DB */
+.genetic_db {
+    margin-top: -70px; 
+}
+
+.db_title{
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 70px;
+    text-align: left;
+}
+
+.db_subtitle{
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    text-align: left;
+}
+
+.db_desc{
+    text-align: left;
+}
+
+.cta-btn-db{
+    background-color: #060706;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: -440px;
+}
+
+.cta-btn-db:hover{
+    background-color: #4caf50;
+    color: black;
+}
+
+.db_left{
+    margin-top: 100px;
+    width: 900px;
+    position: absolute;
+    background-color: rgba(240, 248, 255, 0.521);
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.trait_matching_image_db {
+    width: 1000px;
+    height: 550px;
+    background-color: #060706;
+    border-radius: 25px;
+    float: right;
+    margin-top: 60px;
+    position: relative;
+    margin-bottom: 100px;
+}
+
+  
+/* Farmer Guidelines */
+.farmer-guidelines {
+    margin-top: 40px;
+}
+
+.farmer_title{
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 70px;
+    text-align: right;
+}
+
+.farmer_subtitle{
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    text-align: right;
+}
+
+.trait_matching{
+    text-align: right;
+}
+
+.cta-btn-farmer{
+    background-color: #060706;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 1000px;
+}
+
+.cta-btn-farmer:hover{
+    background-color: #4caf50;
+    color: black;
+}
+
+.left_side{
+    margin-left: -200px;
+    margin-top: -20px;
+}
+
+.right_side{
+    margin-top: -460px;
+}
+
+.trait_matching_image {
+    width: 1000px;
+    height: auto;
+    background-color: #060706;
+    border-radius: 25px;
+}
+
+
+
+  /* Genetic Plan */
+.genetic_plan {
+    margin-top: 50px; 
+}
+
+.plan_title{
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 70px;
+    text-align: left;
+}
+
+.plan_subtitle{
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    text-align: left;
+}
+
+.plan_desc{
+    text-align: left;
+}
+
+.cta-btn-plan{
+    background-color: #060706;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: -500px;
+}
+
+.cta-btn-plan:hover{
+    background-color: #4caf50;
+    color: black;
+}
+
+.plan_left{
+    margin-top: 160px;
+    position: absolute;
+    background-color: rgba(240, 248, 255, 0.411);
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.trait_matching_image1 {
+    width: 1000px;
+    height: auto;
+    background-color: #060706;
+    border-radius: 25px;
+    float: right;
+    margin-top: 60px;
+    position: relative;
+}
+
+
+/* Footer */
+
+.footer {
+    background-color: #0da75a; /* Blue background */
+    color: #ffffff; /* White text */
+    padding: 40px 0;
+    width: 1519px;
+    margin-left: -112px;
+    margin-top: 700px;
+}
+
+.footer h5 {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer p {
+    margin-bottom: 15px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin: 10px 0;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #000000; /* White links */
+    transition: color 0.3s;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.footer-links a:hover {
+    color: #0a0802; /* Gold color on hover */
+}
+
+.newsletter-col {
+    text-align: center;
+    margin-left: 50px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.links-col{
+    margin-left: 100px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.newsletter-col input {
+    margin-bottom: 10px;
+}
+
+.social-row {
+    margin-top: 20px;
+}
+
+.social-media img {
+    width: 30px;
+    margin: 0 10px;
+    transition: transform 0.3s; /* Smooth scaling */
+}
+
+.social-media img:hover {
+    transform: scale(1.2); /* Enlarge on hover */
+}
+
+.about-col{
+    margin-left: -50px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #03581d; /* Blue background */
+    color: white; /* White text */
+    border: none;
+    border-radius: 30%;
+    padding: 10px 12px;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+.back-to-top.visible {
+    opacity: 1; /* Show button when it becomes visible */
+}
+
+.back-to-top:hover {
+    background-color: #000000; /* Darker blue on hover */
+}
+
+
+
+
+

@@ -3,17 +3,14 @@
     display: flex;
     justify-content: space-between;
     z-index: 10;
-    top: 0;
-    left: 0;
     position: fixed;
     width: 100%;
     background-color: rgba(240, 248, 255, 0.192);
-    /* Light transparent */
     transition: background-color 0.3s ease;
 }
 
 .navbar-scrolled {
-    background-color: rgb(6, 158, 74);
+    background-color: rgba(6, 158, 74, 0.829);
     transition: background-color 0.3s ease;
 }
 
@@ -34,4 +31,10 @@
     border-radius: 30px;
     width: 120px;
     text-align: center;
+}
+
+#username{
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 16px;
 }
