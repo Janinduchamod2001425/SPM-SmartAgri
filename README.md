@@ -59,7 +59,7 @@ JWT_SECRET = 'abc123'
 npm run client
 ```
 
-## User Side - Backend
+## Server Side - Backend
 ```
 npm run server
 ```
