@@ -1,7 +1,7 @@
 # SmartAgri 🌱
 Optimizing Traditional Agriculture with Modern Technology
 
-![SmartAgri Demo](./assets/SA.png)
+![SmartAgri Demo](./User/assets/SA.png)
 
 ## Overview
 SmartAgri is a cutting-edge platform designed to revolutionize traditional agricultural practices in Sri Lanka. It integrates modern technology to address the challenges faced by farmers while promoting sustainable farming practices. By focusing on genetic engineering, efficient fertilizer usage, distribution systems, and pest management, SmartAgri empowers farmers to boost productivity, reduce costs, and make informed decisions.
